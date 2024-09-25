@@ -1,0 +1,1360 @@
+{
+    "challenges": [
+      {
+        "description": "Defeat the Deranged Archeologist. You must not move out of his melee distance at any point during the fight.",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Bryophyta using only woodcutting axes.",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Kick the Evil Chicken in the Champions Guild to death",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Hit 16 with Water Strike",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Cook 10 fish in 10 ticks using the 1 tick cooking method.",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Mine a copper ore, iron ore and coal within 15 seconds. The time starts when you start mining your first rock.",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Chop a normal log, oak log and willow log within 15 seconds. The time starts when you start chopping your first tree.",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Complete the following action: Uzqf jo dibu J mpwf zpv Dibsep",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Go forth the land of Misthalin as I!\nVarrock, My name is profitable.\nGardens avast where I can camp.\nTales of a life I can go.\nTears dripping down on the accelerator.\nAy you could help make this a reality mm?\nP.",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "I am a common object in the real world to relieve a basic need.\nYet in Gielinor I seem to be a mystical being indeed.\nI am always being occupied by someone.\nCome and get scolded by them if you dare",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Show proof of an NPC who knows the truth about Runescape being a video game",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Find something nice",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Take damage from swamp decay outside of Morytania",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Lose the ability to teleport to Fossil Island from the Digsite Pendant",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Speak to Hans whilst he is outside of the walls of Lumbridge Castle courtyard",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Type in chat 'you rat' during Scurrius's death animation in a solo encounter",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Stun a Tar Monster",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Complete a pie task for Romily",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Obtain a belt buckle",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Retrieve some gold ore from Terry Bolando",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Try to do something very silly",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Take 28 damage from an explosion in Tzhaar City",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Anger some barbarians by stealing beer from a barrel",
+        "difficulty": "Novice",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Defeat a Tree Spirit in the Enchanted Valley using only Magic Secateurs",
+        "difficulty": "Novice",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Show proof of the leprechaun who hates cabbages",
+        "difficulty": "Novice",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Make your own imp repellant",
+        "difficulty": "Novice",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Eat some mountain goat stew",
+        "difficulty": "Novice",
+        "region1": "Asgarnia",
+        "region2": "Fremennik"
+      },
+      {
+        "description": "Defeat the Shaihakan using a Karambwan tipped Hastae",
+        "difficulty": "Novice",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Catch a Rainbow fish",
+        "difficulty": "Novice",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Score a goal in Gnomeball. Once you obtain the ball from the coach you must only click once on the net and not move in any other way on the field.",
+        "difficulty": "Novice",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Kill a Chaos Dwarf in Kandarin",
+        "difficulty": "Novice",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Pop out of the hole in Yanille",
+        "difficulty": "Novice",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Fish gives immense cover",
+        "difficulty": "Novice",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Repel a mosquito swarm",
+        "difficulty": "Novice",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Receive a cooked lobster from Askeladdon",
+        "difficulty": "Novice",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Get free rope from Ned",
+        "difficulty": "Novice",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Empty barrels of apples from the Lady Zay",
+        "difficulty": "Novice",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Obtain Shantay's Secret Ungathanki Kebab recipe",
+        "difficulty": "Novice",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Catch a Salmon in the Desert",
+        "difficulty": "Novice",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Find the spot potion",
+        "difficulty": "Novice",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Rob 50 gold pieces from Klenter's Pyramid",
+        "difficulty": "Novice",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Teleport a Jackal through a fairy ring",
+        "difficulty": "Novice",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Set a Mummy on fire!",
+        "difficulty": "Novice",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Get bitten by a cat",
+        "difficulty": "Novice",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Show the dialogue of an NPC who wants to start an Onion Guild",
+        "difficulty": "Novice",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Obtain the 3 Mort Myre Fungus drop from a single Swamp Crab",
+        "difficulty": "Novice",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Crazy Archeologist. You must not move out of his melee range at any point during the fight.",
+        "difficulty": "Novice",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Defeat a Runite Golem in the Resource area using only a pickaxe. You do not need to mine the golem once defeated",
+        "difficulty": "Novice",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Defeat an Ent with a woodcutting axe",
+        "difficulty": "Novice",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Spawn the Golum Goblin",
+        "difficulty": "Novice",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Speak to a Jagex Mod spoof in Tirannwn",
+        "difficulty": "Novice",
+        "region1": "Tirannwn",
+        "region2": ""
+      },
+      {
+        "description": "Every day I sit by my telescope.\nI watch the serpent fall.\nMy hand numb with injury.\nCome and speak to me",
+        "difficulty": "Novice",
+        "region1": "Tirannwn",
+        "region2": ""
+      },
+      {
+        "description": "Boogie with the knife wielding crab sporting a claw of it's kind",
+        "difficulty": "Novice",
+        "region1": "Tirannwn",
+        "region2": "Kandarin"
+      },
+      {
+        "description": "Complete the following action: 5479706520696e206368617420746f20486f706c65657a2022686f7020706c6561736522",
+        "difficulty": "Novice",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Blow a kiss to ''Abey alt ml mt''",
+        "difficulty": "Novice",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Complete the following action: 01000110 01101001 01101110 01100100 00100000 01100001 00100000 01010010 01100101 01100100 00100000 01010100 01101111 01101011 01100101 01101110",
+        "difficulty": "Novice",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
+        "description": "Poison yourself from a Bird Bath",
+        "difficulty": "Novice",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
+        "description": "Complete the Varlamore only Barcrawl by obtaining and drinking these tipples: Cider, Beer, Wine, Beer Tankand, Rum, Whiskey, Vodka, Gin, Wizard Mindbomb, Dwarven Stout, Steamforge brew, Trapper's Tipple, Sunbeam Ale, Moon-lite, Sun-shine, Eclipse Wine. You must only obtain these in Varlamore",
+        "difficulty": "Novice",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
+        "description": "Cook 28 fish in 28 ticks using the 1 tick cooking method.",
+        "difficulty": "Intermediate",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Scurrius solo. You must not take any damage off prayer and can only attack using the last combat style he used.",
+        "difficulty": "Intermediate",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Create a rainbow fire line using red logs, green logs, blue log, purple log and a regular coloured fire.",
+        "difficulty": "Intermediate",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Kill 5 Armoured Zombies in 1:40 or less using only throwing axes",
+        "difficulty": "Intermediate",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Obtain an Iron Halberd from a Gorak in the Gorak Plane",
+        "difficulty": "Intermediate",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Complete 5 Mahogany Homes Contracts within 5 minutes. You must not use Bankers Note or a Plank Sack",
+        "difficulty": "Intermediate",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Defeat all of the Animated Armour types in the Warriors Guild. For each fight you must match the equipment that it is using and not have any other items equipped. You must kill all 7 within 3 minutes and 30 seconds",
+        "difficulty": "Intermediate",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Balance 5 barrels on your head",
+        "difficulty": "Intermediate",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Get 3 Ornate Lockpicks from a single run of Camdozaal Vault",
+        "difficulty": "Intermediate",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Solo the Fishing Trawler. You must catch a minimum of 20 fish. The 50% boost from the Ardougne Elite diary does not count.",
+        "difficulty": "Intermediate",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Kill a Brutal Green Dragon and a Mithril Dragon back to back without leaving the Ancient Cavern. You must be under the influence of a Drunken Dragon after every instance of damage you deal. You must not use Bankers Note",
+        "difficulty": "Intermediate",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Complete the following action: . -. - . .-. ....... - .... . ....... .-.. .- .. .-. ....... --- ..-. ....... -.-. .-. --- -.-. . ....... -. .- ... .... ....... - .... .-. .- .-.. .-.. .. -. --.",
+        "difficulty": "Intermediate",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Complete the following action: 70 108 97 112 32 97 116 32 49 54 78 32 48 54 69 32 67 97 114 114 121 32 87 101 105 115 115 32 68 117 110 103",
+        "difficulty": "Intermediate",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Defeat a Black Demon using only Holy Water",
+        "difficulty": "Intermediate",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Obtain a seed or a herb from a Sea Snake",
+        "difficulty": "Intermediate",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Dagannoth Kings. You must only attack and kill one at a time. All three must be defeated before the first one respawns",
+        "difficulty": "Intermediate",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Dream in the hotel above an inn in a tropical village",
+        "difficulty": "Intermediate",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Have somebody call you out for using NPC Contact",
+        "difficulty": "Intermediate",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Defeat a Moss Giant in the Viyeldi Caves",
+        "difficulty": "Intermediate",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Defeat a Rune Dragon. You must not wear insulated boots and must not take any damage from the electricity attacks",
+        "difficulty": "Intermediate",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Harvest Goutweed from a herb patch",
+        "difficulty": "Intermediate",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Kalphite Queen. You may only use the combat style that she is praying against and you may not walk under, safespot or flinch",
+        "difficulty": "Intermediate",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Have fish be firing from the cannon on both ships at the same time in a solo encounter at Tempoross ",
+        "difficulty": "Intermediate",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Complete a solo game of Guardians of the Rift. You must earn combined total of 500 contribution points with a minimum of 200 points in each.",
+        "difficulty": "Intermediate",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Saviour the taste of giant's feet after defeating the mightiest Hill Giant of them all with the largest blade from their own kin",
+        "difficulty": "Intermediate",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Complete a run of the summer garden in the Sorceress Garden. You must complete the maze in one click. There must not be anyone else in the maze and you must not use any of the Sorceress Garden plugins or set it up in advance",
+        "difficulty": "Intermediate",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Complete a game of Trouble Brewing. You must be solo in your own team and brew 20 Rum during the game",
+        "difficulty": "Intermediate",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Find the Gnome Skeleton in Morytania",
+        "difficulty": "Intermediate",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Churn cheese from butter ''That's Totally Not Garlic!''",
+        "difficulty": "Intermediate",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Chaos Elemental 3 times in a row. You may not safespot or flinch, you must not pick up any items or empty items from any container, you must have Vial Smasher enabled and you may not use any food that leaves an item behind in the inventory. Once an item has been unequipped you may not reequip it.",
+        "difficulty": "Intermediate",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Chaos Fanatic using only Melee",
+        "difficulty": "Intermediate",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Solo the Revenant Maledictus. You must not use any revenant weapons",
+        "difficulty": "Intermediate",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the King Black Dragon without antifire protection",
+        "difficulty": "Intermediate",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Show your respects to the dead by planting 20 flowers from Adamant Seeds in the Graveyard of Shadows",
+        "difficulty": "Intermediate",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the 'Rabbit'",
+        "difficulty": "Intermediate",
+        "region1": "Tirannwn",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Zalcano solo",
+        "difficulty": "Intermediate",
+        "region1": "Tirannwn",
+        "region2": ""
+      },
+      {
+        "description": "Catch 35 red chinchompas (bonus chins from relics do not count towards this total) in the Gwenith Hunter area within 3 minutes. Time starts when you place down a trap.",
+        "difficulty": "Intermediate",
+        "region1": "Tirannwn",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Skotizo using only melee and without using a Demonbane weapon.",
+        "difficulty": "Intermediate",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Steal an Artefact and hand it to Captain Khaled. You may not run and must not have any Guards set up on the world",
+        "difficulty": "Intermediate",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Find every book in the Arceuus Library within 3 minutes. The timer starts when you take the first book",
+        "difficulty": "Intermediate",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Defeat 2 Lizardmen Shamens in Molch Temple. You may only use melee, can only pray range and must not take any melee damage or any damage from the purple spawns",
+        "difficulty": "Intermediate",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Defeat a Lizardmen Shamen in the Lizardmen Canyon without equipping any Shayzian Armour pieces",
+        "difficulty": "Intermediate",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Have all 4 braziers lit at the same time during a solo Wintertodt whilst it has less than 50% energy",
+        "difficulty": "Intermediate",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Sarachnis with a full inventory of 28 newspapers",
+        "difficulty": "Intermediate",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Obtain 25 Mithril Ore in 5 minutes at the Blast Mine",
+        "difficulty": "Intermediate",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Bryophyta using only poison dynamite.",
+        "difficulty": "Intermediate",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Obtain 5 Molch Pearls within 10 minutes",
+        "difficulty": "Intermediate",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Aggress all of the Dust Devils in the larger room in the Catacombs of Kourend. Without killing any, show off your hair for 3 seconds before killing them all. You must not restore your stats",
+        "difficulty": "Intermediate",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Catch 14 Pyre Foxes whilst listening to the song Ylvis - The Fox (What Does The Fox Say?). You must start the song prior to setting up your first Deadfall trap and must catch all 14 before the song finishes.",
+        "difficulty": "Intermediate",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Hueycoatl solo",
+        "difficulty": "Intermediate",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
+        "description": "Complete 4 Hunter Contracts within 10 minutes",
+        "difficulty": "Intermediate",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
+        "description": "Fish a full inventory of Bream whilst constantly performing the 'Wiggle'. The 'Wiggle' is achieved by changing the direction that your character is facing in the stream after every tick.",
+        "difficulty": "Intermediate",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
+        "description": "Complete the first Jad Challenge, the second Jad Challenge and the third Jad Challenge in a row without failure",
+        "difficulty": "Experienced",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Complete the third Jad Challenge. You must stand in melee distance of the Jad before you can attack it.",
+        "difficulty": "Experienced",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Claim 10 Agility Tickets in a row without missing one. The additional tickets claimed from the Elite Karamja diary do not count towards this total. With your compass set to North, you may only move horizontally until you are aligned with the target pillar then you can only move vertically",
+        "difficulty": "Experienced",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Complete the Fight Caves. The only time you are allowed to click is if your character is stuck. Otherwise you must let Auto Retaliate do the work for you",
+        "difficulty": "Experienced",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Defeat 3 Cerberus in a single trip without using prayer. You must let him summon souls at least once in every fight and you must not use Bankers Note to resupply or cheese the souls to avoid damage",
+        "difficulty": "Experienced",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Cerberus. You must only have your protection prayers enabled for one consecutive tick each time before you must have at least one tick with no protection prayers enabled. You must let him summon souls at least twice during the fight. You must not take any damage by the souls",
+        "difficulty": "Experienced",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Kreeara. You may only use chinchompas and you may only directly attack the bodyguards. You must change the bodyguard you are attacking after every throw and must target them in this order: Melee Minion, Magic Minion, Range Minion. Once a minion dies you must wait for it to respawn the next time you are due to hit that minion.",
+        "difficulty": "Experienced",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Defeat 3 Tormented Demons at the same time. You must kill one Tormented demon using melee demonbane, one using Scorching Bow and the other using the Purging Staff",
+        "difficulty": "Experienced",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Whisperer. You must not move diagonally or in an L shape. You must not take any damage from the Shadow Tentacles",
+        "difficulty": "Experienced",
+        "region1": "Asgarnia",
+        "region2": "Desert"
+      },
+      {
+        "description": "Burn an oomlie wrap",
+        "difficulty": "Experienced",
+        "region1": "Asgarnia",
+        "region2": "Desert"
+      },
+      {
+        "description": "Defeat the Kraken using only range attacks",
+        "difficulty": "Experienced",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "In a field there was 20 daisy's.\nCrushed by 5 adventurers feet.\nAngry gardener whistles every 48 days at the thought.\nWhat can every 1 person do?\n\nIn the river there can only be 39 sharks.\nSwimming 22 laps hungry for human flesh.\nNot even the top 36% of fishermen can hope to catch them.\nTo end the reign of terror that the sharks bring for the next 41 years.\nIf they did they would win a 6 karat gold medal.\nAnd go down in history as one of the greatest 28 heroes to have ever lived.\n\nWhat do these and the other 35 whimsical stories have in common?\nSomewhere in here you will find 4 riddles.\nHidden in plain sight for you and the other 17 league masters to solve.\nEven the Sage and his 54 disciples would struggle to find.\nOnly the greatest 1 can be the one to finally solve and put this to rest.\nSo look carefully in front of the 4 members of the audience here to watch.\nAnd grab yourself the victory you have always kraved for 47% of your life.",
+        "difficulty": "Experienced",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Obtain the perfect score of 1,000 in a game of Archery at the Ranging Guild",
+        "difficulty": "Experienced",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Dagannoth Rex 2 times. You must be under attack by Dagannoth Prime and Supreme at all times and must not kill them. You must not take any damage off prayer",
+        "difficulty": "Experienced",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Defeat all Dagannoth Kings at the same time using the bouncing effect of the Venator Bow",
+        "difficulty": "Experienced",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Dagannoth Rex without using magic, Dagannoth Prime without using range and Dagannoth Surpreme without using melee. All 3 kills must be done one after the other",
+        "difficulty": "Experienced",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Phantom Muspah. You must only use melee. You must not run and must complete a perfect kill",
+        "difficulty": "Experienced",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Phantom Muspah. You must not use any prayer draining attacks during its shield phase and must complete a perfect kill",
+        "difficulty": "Experienced",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Duke Sucellus. You must not use Arder-musca poison to wake him up.",
+        "difficulty": "Experienced",
+        "region1": "Fremennik",
+        "region2": "Desert"
+      },
+      {
+        "description": "Poison a Turoth",
+        "difficulty": "Experienced",
+        "region1": "Fremennik",
+        "region2": "Tirannwn"
+      },
+      {
+        "description": "Defeat the Abyssal Sire using only Shadow spells.",
+        "difficulty": "Experienced",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Akkha solo in the Tombs of Amascut Expert Mode. After each shadow becomes vulnerable you must DPS skip it once before you can finish it off. You must not take any damage from the shadows special attack.",
+        "difficulty": "Experienced",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Araxxor. You must not directly damage the boss in any way during its enrage phase or take damage directly from Araxxor or venom pools during the enrage phase.",
+        "difficulty": "Experienced",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Arraxor with a full inventory of 28 newspapers",
+        "difficulty": "Experienced",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Complete all 5 floors of the Hallowed Sepulchre whilst listenening to Rick Astley - Never Gonna Give You Up on loop. You must complete the 5th floor before the song has fully completed twice and you must not make any mistakes.",
+        "difficulty": "Experienced",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Complete a Barrows run. You may only use a Halberd and can not freeze or stun any brother. You must meet the requirements for the CA task ''Can't Touch Me'' ",
+        "difficulty": "Experienced",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Complete a Barrows Run. You must not use any prayer or food throughout the entire run. You must only use barrows equipment that matches the brother that you are fighting eg Dharoks set against Dharok, Karils Set against Karil etc. You may not have any items equipped in any other slot.",
+        "difficulty": "Experienced",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Build up the Morton Temple and reach 100% sanctity. The whole process must be completed solo",
+        "difficulty": "Experienced",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Complete a game of Skullball in less than 1:45",
+        "difficulty": "Experienced",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Solo the Nightmare. You must not use magic on the pillars or melee on the boss.",
+        "difficulty": "Experienced",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Spindel and Venenatis solo back to back with a full inventory of 28 newspapers. You must not leave the Wilderness, reheal or reboost once you start the first fight",
+        "difficulty": "Experienced",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Vetion. You must skip the skeletal hellhounds in at least one of his two phases",
+        "difficulty": "Experienced",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Callisto. You must have the Tileman plugin enabled. After each attack you must move to a different tile. You must not take any damage from bear traps or step on any tiles you have already stood on",
+        "difficulty": "Experienced",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Callisto. You must stand in his melee distance and cannot freeze it",
+        "difficulty": "Experienced",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Corporeal Beast. You may not use the Osmuntens Fang or use any stat draining attacks. You may only use supplies that you can hold within a single inventory and must not use Bankers Note",
+        "difficulty": "Experienced",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Zulrah in all 4 rotations whilst meeting the requiirements for the ''Perfect Zulrah'' CA task. ",
+        "difficulty": "Experienced",
+        "region1": "Tirannwn",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Zulrah after reaching her random hidden phase",
+        "difficulty": "Experienced",
+        "region1": "Tirannwn",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Zalcano solo using only a Bronze Pickaxe",
+        "difficulty": "Experienced",
+        "region1": "Tirannwn",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Fragment of Seren without using Magic",
+        "difficulty": "Experienced",
+        "region1": "Tirannwn",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Vanguards solo in Chambers of Xeric. You must attack a different Vanguard after every attack and must not let them reset",
+        "difficulty": "Experienced",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Alchemical Hydra. During enrage phase, you must change your combat style after every attack. You must attack the Hydra at the same speed as it attacks you and you must not miss an attack. You must not take damage off prayer",
+        "difficulty": "Experienced",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Sarachnis. Every time you are stunned, you must perform the Ring of Stone tech. You must perform this tick perfect every time. You must not use Arenea Boots.",
+        "difficulty": "Experienced",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Defeat a Moons of Peril. You must not stand or attack on the coloured moon at any point. You may not attack during the Eclipse Moons Clone phase",
+        "difficulty": "Experienced",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
+        "description": "Complete a full Perilious Moons run. You must not use melee against any of the moons",
+        "difficulty": "Experienced",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
+        "description": "Complete a Pillarless Inferno.",
+        "difficulty": "Master",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Complete the Inferno. You must only attack each Jal-MejJak once and must not kill any. You cannot use the redemption prayer, phoenix necklaces or Bankers Note.",
+        "difficulty": "Master",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Complete the Fight Caves without using Prayer",
+        "difficulty": "Master",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Complete the 6th Jad Challenge. You must not kill any healers",
+        "difficulty": "Master",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Abyssal Sire. You may not move at all during P3.",
+        "difficulty": "Master",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Complete a Master clue scroll. You may not use any teleportation method to get to your clue scroll steps. You may use in world transportation methods. You may only use the region teleports provided by the Area tab of the Leagues interface if there is no other form of transportation to your step.",
+        "difficulty": "Master",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Complete the 5th Jad Challenge. You must use a different godsword for each Jad and only damage Jad and its healers with that godsword.",
+        "difficulty": "Master",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Defeat three Tormented Demons at the same time. The only method of damage you are allowed is off shield using Elemental spells, Heavy Ranged or Crush weapons. You must not use any thralls or status effects to deal damage. You must meet the requirements for the CA task ''Three Times The Thrashing''",
+        "difficulty": "Master",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Defeat General Graardor using the 7:0 method. You must not use any tile markers or any references which shows you the correct tiles to stand. You must not be attacked by General Graardor at any point.",
+        "difficulty": "Master",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Commander Zilyana using the GeChallengeM energy efficient method. You must not use any tile markers or any references which shows you the correct tiles to stand. You must not be attacked by Commander Zilyana at any point.",
+        "difficulty": "Master",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Defeat K'ril Tsutsaroth using the 8:0 method. You must not use any tile markers or any references which shows you the correct tiles to stand. You must not be attacked by K'ril Tsutsaroth at any point.",
+        "difficulty": "Master",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Nex Solo",
+        "difficulty": "Master",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Whisperer. You must only cast spells from the Ancient Magic spellbook. You must manually cast each spell in this order. Smoke -> Shadow -> Blood -> Ice. You must then repeat the cycle throughout the kill. Once you reach the enraged phase, you must reverse this order so its Ice -> Blood -> Shadow -> Smoke. You must not take any damage off prayer.",
+        "difficulty": "Master",
+        "region1": "Asgarnia",
+        "region2": "Desert"
+      },
+      {
+        "description": "Defeat the Awakened Whisperer. You must not move diagonally or in an L shape.You must not take any damage from the Shadow Tentacles",
+        "difficulty": "Master",
+        "region1": "Asgarnia",
+        "region2": "Desert"
+      },
+      {
+        "description": "Defeat three Demonic Gorillas at the same time. You must not take any damage and all three demonic gorillas must be killed in consecutive hits",
+        "difficulty": "Master",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Thermonuclear Smoke Devil using only range",
+        "difficulty": "Master",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Thermonuclear Smoke Devil. You must not use prayer and must be under attack by every single Smoke Devil in the boss room",
+        "difficulty": "Master",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Thermonuclear Smoke Devil. At the start of the fight you must take off your facemask/slayer helmet and have your stats reduced. Without restoring your stats you must then finish the fight without using Banker's Note",
+        "difficulty": "Master",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Complete the following action: snobvhfsatifecbvezoyjelkevewqfjzsqisf | tamrofraeyhtnomyadnietadesaelerowtssendamyeknom",
+        "difficulty": "Master",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Glough. Every attack you must change combat styles and you must attack in this order: Melee, Magic, Range. You must then repeat the cycle",
+        "difficulty": "Master",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Vorkath. You must have the Tileman plugin enabled and must not step on a tile you have already stood on. You must move 2 tiles between every attack",
+        "difficulty": "Master",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Leviathan. Your monitor must be set to black and white mode and you must not take any damage off prayer",
+        "difficulty": "Master",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Zebak solo at Path Level 4 or higher in a 400 Raid Level TOA or higher. All Zebak invocations must be enabled and no Blazing Tombs invocation must be enabled and your protect from range and protect from magic prayers must be located on the opposite diagonal corners of your prayer book. You must not take any damage off prayer",
+        "difficulty": "Master",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Kephri solo at Path Level 4 or higher in a 400 Raid Level TOA or higher. All Kephri invocations must be enabled and no Blazing Tombs invocation must be enabled. You must have the Tileman plugin enabled and must not step on a tile you have already stood on. ",
+        "difficulty": "Master",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Complete the Tombs of Amascut solo at 300 Raid Level or higher. You must not bring any of your own supplies or use any supplies provided by the ghost. The Overly Draining, Deadly Prayers and Silent Prayers invocations must be enabled",
+        "difficulty": "Master",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Akkha solo at Path Level 4 or higher in a 400 Raid Level TOA or higher. You must have Feeling Special and Double Trouble and no Blazing Tombs invocation must be enabled. You must stay within a single quadrant during Simon Says and not cross over into any other quadrant. You must not take any damage.",
+        "difficulty": "Master",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Baba solo at Path Level 4 or higher in a 400 Raid Level TOA or higher. You must have Mind the Gap and no Blazing Tombs invocation must be enabled. You must stand in the central segment of the room at all times. The only exceptions to this rule are that you may only cross to the sides of the room for a single tick before Baba pushes you before the rolling boulders phase and for a single tick to dodge the boulder smash attack and only if there is no rocks in the centre for you to use.",
+        "difficulty": "Master",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Solo the Theatre of Blood: Normal Mode",
+        "difficulty": "Master",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Reach and beat the Nylocas room in NM Theatre of Blood solo raid. You must not let any pillars fall and must meet the requirements for the Perfect Nylocas CA task",
+        "difficulty": "Master",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Araxxor without using Melee. You must not stand in Araxxor's melee distance at any point during the fight",
+        "difficulty": "Master",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Araxxor 5 times in one trip. You must not use any form of antipoison or antivenom and use any items that provide an immunity to poison/venom. If you have a relic that provides venom immunity then you must instead defeat Araxxor 5 times in one trip whilst dropping a vial of nitroglycrin every 20 seconds. You may not use Bankers Note",
+        "difficulty": "Master",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Corporeal Beast. You must not use magic or any corpbane weapon.  You may only use supplies that you can hold within a single inventory and must not use Bankers Note",
+        "difficulty": "Master",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Corrupted Gauntlet. You may only use 1 Tier 1 weapon and your fist. You may not use the 5:1 method.",
+        "difficulty": "Master",
+        "region1": "Tirannwn",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Corrupted Gauntlet. You may only walk and must not lose any ticks when attacking the Hunlief. You must use melee as one of your combat styles",
+        "difficulty": "Master",
+        "region1": "Tirannwn",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Vespula solo in Chambers of Xeric: Challenge Mode. You may not use the redemption method or phoenix necklaces",
+        "difficulty": "Master",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Tekton solo in Chambers of Xeric Challenge Mode. You may not use Osmumtens Fang or any stat draining attacks",
+        "difficulty": "Master",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Guardians solo in Chambers of Xeric Challenge Mode. You must defeat both using only a bronze pickaxe and no DWH specs. You must not take any damage",
+        "difficulty": "Master",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Great Olm solo in Chambers of Xeric Challenge Mode. You must not use melee on the melee hand, magic on the magic hand or use range on the head",
+        "difficulty": "Master",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Complete the Chambers of Xeric Challenge Mode solo. You may not use any of your own supplies or use any supplies provided within the raid",
+        "difficulty": "Master",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Alchemical Hydra. You must not weaken it using any of the pools and must not take any damage",
+        "difficulty": "Master",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Vardorvis. You must start with a Rune Scimitar and must swap to the following weapons at the following hp thresholds: 80% hp -> Adamant Scimitar, 60% hp Mithril Scimitar -> 40% hp Steel Scimitar and 20% hp -> Iron Scimitar. You must deal the final blow using a Bronze Scimitar.",
+        "difficulty": "Master",
+        "region1": "Kourend",
+        "region2": "Desert"
+      },
+      {
+        "description": "Defeat Sol Heredit without using melee.",
+        "difficulty": "Master",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
+        "description": "Complete the following action: Koyvec Psps psbwc Wydbsx cxyed dx",
+        "difficulty": "Master",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
+        "description": "Complete a full Perilious Moons run. You must have a negative defence stat in stab, slash, and crush. You may not resupply once you start the first Moon or use Bankers Note.",
+        "difficulty": "Master",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
+        "description": "Complete the Fight Caves and Inferno back to back without banking or changing your gear/resupplying in any way. You must not use Bankers Note.",
+        "difficulty": "Grandmaster",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Complete the 6th Jad Challenge and the League only Jad Challenge in a row without failure",
+        "difficulty": "Grandmaster",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Complete the Fight Caves without taking any damage",
+        "difficulty": "Grandmaster",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Complete a Pillarless Inferno. You must only attack each Jal-MejJak once and must not kill any. You must not kill Jad during Zuk. You must meet the requirements for the CA task ''Wasn't Even Close''",
+        "difficulty": "Grandmaster",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Solo Nex. Every time you take damage from any source you must type in chat, a word where all the characters mapped to the traditional alphabet equals the damage that you took. You will fail the challenge if you do not say a word equal to the correct value before Nex damages you again. A word is only acceptable if it can be found within the Oxford Dictionary and you must not say the same word twice.",
+        "difficulty": "Grandmaster",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Awakened Whisperer. You must only cast spells from the Ancient Magic spellbook. You must manually cast each spell in this order. Smoke -> Shadow -> Blood -> Ice. You must then repeat the cycle throughout the kill. Once you reach the enraged phase, you must reverse this order so its Ice -> Blood -> Shadow -> Smoke. You must not take any damage off prayer.",
+        "difficulty": "Grandmaster",
+        "region1": "Asgarnia",
+        "region2": "Desert"
+      },
+      {
+        "description": "Defeat the Whisperer using only Melee and standing in its melee distance.",
+        "difficulty": "Grandmaster",
+        "region1": "Asgarnia",
+        "region2": "Desert"
+      },
+      {
+        "description": "Defeat three Demonic Gorillas at the same time with your entire screen rotated by 180 degrees. You must not take any damage and all three demonic gorillas must be killed in consecutive hits.",
+        "difficulty": "Grandmaster",
+        "region1": "Kandarin",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Vorkath. You must not have anything equipped at all at any point during the fight. You must not use Banker's Note",
+        "difficulty": "Grandmaster",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Awakened Duke Sucellus. You must not use melee, run and must get a perfect kill.",
+        "difficulty": "Grandmaster",
+        "region1": "Fremennik",
+        "region2": "Desert"
+      },
+      {
+        "description": "Defeat the Awakened Duke Sucellus. You must not run, must attack on the same tick that Duke attacks each time and not miss any attacks you could have gotten. You must get a perfect kill.",
+        "difficulty": "Grandmaster",
+        "region1": "Fremennik",
+        "region2": "Desert"
+      },
+      {
+        "description": "Defeat the Awakened Leviathan. Your monitor must be set to black and white mode and you must not take any damage off prayer",
+        "difficulty": "Grandmaster",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Complete a 1000 Raid Level Tombs of Amascut within 25 minutes",
+        "difficulty": "Grandmaster",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Akkha solo at Path level 4 or higher in an 700 Raid Level TOA raid or higher. You must have all Akkha invocations enabled and you must not have Blazing Tombs 2 invocation enabled. You must have your camera spinning in one direction at all times throughout the fight.",
+        "difficulty": "Grandmaster",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Wardens solo in a 700 Raid Level TOA raid or higher. You must have Insanity enabled and must not have Blazing Tombs 2 invocation enabled. You must not attack or target any skulls during P3",
+        "difficulty": "Grandmaster",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Elidinis Warden (The Warden which summons Akkha and Kephri) solo in a 700 Raid Level TOA or higher. You must have Insanity, Stay Vigilant, Aerial Assault enabled and Blazing Tombs 2 invocation must not be enabled. At the start of P3 Wardens you must rotate your camera into the birds eye view position and then lock it there for the rest of the fight. You must obstruct your view of Akkha with your inventory and your own character with your chatbox (you must not hide the UI elements at any point). You must meet the requirements for the CA task Perfect Wardens",
+        "difficulty": "Grandmaster",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Solo the Theatre of Blood: Hard Mode.",
+        "difficulty": "Grandmaster",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Complete a Theatre of Blood: Hard Mode. You must meet the requirements for the Perfect Theatre CA task",
+        "difficulty": "Grandmaster",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Complete all 5 floors of the Hallowed Sepulchre. At the end of Floor 2 and at the end of every floor thereafter you must fully rotate your screen clockwise by 90 degrees. You must not make any mistakes and complete within the target time.",
+        "difficulty": "Grandmaster",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Phosani's Nightmare. You must not lose a single prayer point and must not take any unneccesary damage.",
+        "difficulty": "Grandmaster",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Phosani's Nightmare with only a swamp lizard and you must not take any unneccessary damage.",
+        "difficulty": "Grandmaster",
+        "region1": "Morytania",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Venenatis solo. You must convert each character of the phrase NEWSPEPER ENTHUSIEST into a number respective to its position in the traditional alphabet. You must then attack exactly that number of ticks later after your previous attack. Once you reach the end of the phrase you must repeat from the first character.",
+        "difficulty": "Grandmaster",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Corrupted Gauntlet in less than 3 minutes.",
+        "difficulty": "Grandmaster",
+        "region1": "Tirannwn",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Corrupted Gauntlet. You must meet the requirements for the following CA tasks in a single kill: Wolf Puncher II, Defence Doesn't Matter II, Egniol Diet II and Perfect Corrupted Hunllef.",
+        "difficulty": "Grandmaster",
+        "region1": "Tirannwn",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Corrupted Gauntlet. After every Hunlef attack you must type into the chat the next number of the Fibonacci sequence. You must complete a perfect kill.",
+        "difficulty": "Grandmaster",
+        "region1": "Tirannwn",
+        "region2": ""
+      },
+      {
+        "description": "Complete the Chambers of Xeric Challenge Mode solo. You must scale the raid to the 1 + 24 with Captain Rimor and must meet the requirements for Perfect Olm (solo)",
+        "difficulty": "Grandmaster",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Awakened Vardorvis. You must meet the requirements for the CA task ''Axe Enthusiast''",
+        "difficulty": "Grandmaster",
+        "region1": "Kourend",
+        "region2": "Desert"
+      },
+      {
+        "description": "Defeat Sol Heredit. You must not hide behind any pillar at any point throughout the Colloseum run. Whenever Doom I, Doom II or Doom III is offered as a modifier you must choose it.",
+        "difficulty": "Grandmaster",
+        "region1": "Varlamore",
+        "region2": ""
+      }
+    ]
+  }

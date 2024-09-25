@@ -1,11 +1,26 @@
-import { Message } from 'discord.js';
-import impSpottingListener from './impSpottingListener';
+import { ButtonInteraction, Message } from 'discord.js';
+import impSpottingListener from './messageListeners/impSpottingListener';
+import challengeApprovalMessageListener from './messageListeners/challengeApprovalListener';
+import { ButtonListener } from './types';
+import challengeApprovalButtonListener from './buttonListeners/challengeApprovalListener';
+import challengeRerollButtonListener from './buttonListeners/challengeRerollListener';
 
-const listeners = [impSpottingListener];
+const messageListeners = [impSpottingListener, challengeApprovalMessageListener];
+const buttonListeners = [challengeApprovalButtonListener, challengeRerollButtonListener];
 
 export const handleMessageCreate = (message: Message) => {
-  const validChannels = listeners.filter((listener) =>
+  const validChannels = messageListeners.filter((listener) =>
     listener.channels.includes(message.channelId),
   );
   validChannels.forEach((channel) => channel.onChannelMessage(message));
+};
+
+export const handleButtonInteraction = async (interaction: ButtonInteraction) => {
+  // Filter listeners that start with the button customId
+  const validListeners = buttonListeners.filter((listener) =>
+    listener.buttons.some((buttonId) => interaction.customId.startsWith(buttonId)),
+  );
+
+  // Trigger the valid listeners' handler functions
+  await Promise.all(validListeners.map((listener) => listener.onButtonInteraction(interaction)));
 };
