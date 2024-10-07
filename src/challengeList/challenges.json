@@ -1,12 +1,6 @@
 {
     "challenges": [
       {
-        "description": "Defeat the Deranged Archeologist. You must not move out of his melee distance at any point during the fight.",
-        "difficulty": "Novice",
-        "region1": "General",
-        "region2": ""
-      },
-      {
         "description": "Defeat Bryophyta using only woodcutting axes.",
         "difficulty": "Novice",
         "region1": "General",
@@ -277,12 +271,6 @@
         "region2": ""
       },
       {
-        "description": "Defeat the Crazy Archeologist. You must not move out of his melee range at any point during the fight.",
-        "difficulty": "Novice",
-        "region1": "Wilderness",
-        "region2": ""
-      },
-      {
         "description": "Defeat a Runite Golem in the Resource area using only a pickaxe. You do not need to mine the golem once defeated",
         "difficulty": "Novice",
         "region1": "Wilderness",
@@ -349,6 +337,18 @@
         "region2": ""
       },
       {
+        "description": "Show Nasty Nick the jolly side of life by wearing a red outfit and dancing a jig",
+        "difficulty": "Novice",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
+        "description": "Have your fish stolen by a naughty gull",
+        "difficulty": "Novice",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
         "description": "Cook 28 fish in 28 ticks using the 1 tick cooking method.",
         "difficulty": "Intermediate",
         "region1": "General",
@@ -374,6 +374,12 @@
       },
       {
         "description": "Obtain an Iron Halberd from a Gorak in the Gorak Plane",
+        "difficulty": "Intermediate",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Defeat the Deranged Archeologist. You must not move out of his melee distance at any point during the fight.",
         "difficulty": "Intermediate",
         "region1": "General",
         "region2": ""
@@ -553,6 +559,12 @@
         "region2": ""
       },
       {
+        "description": "Defeat the Crazy Archeologist. You must not move out of his melee range at any point during the fight.",
+        "difficulty": "Intermediate",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
         "description": "Defeat the 'Rabbit'",
         "difficulty": "Intermediate",
         "region1": "Tirannwn",
@@ -643,12 +655,6 @@
         "region2": ""
       },
       {
-        "description": "Defeat the Hueycoatl solo",
-        "difficulty": "Intermediate",
-        "region1": "Varlamore",
-        "region2": ""
-      },
-      {
         "description": "Complete 4 Hunter Contracts within 10 minutes",
         "difficulty": "Intermediate",
         "region1": "Varlamore",
@@ -659,6 +665,12 @@
         "difficulty": "Intermediate",
         "region1": "Varlamore",
         "region2": ""
+      },
+      {
+        "description": "Find a nasty surprise",
+        "difficulty": "Intermediate",
+        "region1": "Varlamore",
+        "region2": "Desert"
       },
       {
         "description": "Complete the first Jad Challenge, the second Jad Challenge and the third Jad Challenge in a row without failure",
@@ -685,6 +697,12 @@
         "region2": ""
       },
       {
+        "description": "Defeat the Soul Wars Avatar solo, you must stand in melee distance of the Avatar at all times during the fight. You must not use Banker's Note",
+        "difficulty": "Experienced",
+        "region1": "General",
+        "region2": ""
+      },
+      {
         "description": "Defeat 3 Cerberus in a single trip without using prayer. You must let him summon souls at least once in every fight and you must not use Bankers Note to resupply or cheese the souls to avoid damage",
         "difficulty": "Experienced",
         "region1": "Asgarnia",
@@ -698,6 +716,12 @@
       },
       {
         "description": "Defeat Kreeara. You may only use chinchompas and you may only directly attack the bodyguards. You must change the bodyguard you are attacking after every throw and must target them in this order: Melee Minion, Magic Minion, Range Minion. Once a minion dies you must wait for it to respawn the next time you are due to hit that minion.",
+        "difficulty": "Experienced",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Defeat Commander Zilyana. You may only use chinchompas and you may only directly attack the bodyguards. You must change the bodyguard you are attacking after every throw and must target them in this order: Melee Minion, Magic Minion, Range Minion. Once a minion dies you must wait for it to respawn the next time you are due to hit that minion.",
         "difficulty": "Experienced",
         "region1": "Asgarnia",
         "region2": ""
@@ -859,12 +883,6 @@
         "region2": ""
       },
       {
-        "description": "Defeat Callisto. You must stand in his melee distance and cannot freeze it",
-        "difficulty": "Experienced",
-        "region1": "Wilderness",
-        "region2": ""
-      },
-      {
         "description": "Defeat the Corporeal Beast. You may not use the Osmuntens Fang or use any stat draining attacks. You may only use supplies that you can hold within a single inventory and must not use Bankers Note",
         "difficulty": "Experienced",
         "region1": "Wilderness",
@@ -925,6 +943,12 @@
         "region2": ""
       },
       {
+        "description": "Defeat the Hueycoatl solo. You must not use Banker's Note",
+        "difficulty": "Experienced",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
         "description": "Complete a Pillarless Inferno.",
         "difficulty": "Master",
         "region1": "General",
@@ -932,6 +956,12 @@
       },
       {
         "description": "Complete the Inferno. You must only attack each Jal-MejJak once and must not kill any. You cannot use the redemption prayer, phoenix necklaces or Bankers Note.",
+        "difficulty": "Master",
+        "region1": "General",
+        "region2": ""
+      },
+      {
+        "description": "Complete the Fight Caves and Inferno back to back without banking or changing your gear/resupplying in any way. You must not use Bankers Note.",
         "difficulty": "Master",
         "region1": "General",
         "region2": ""
@@ -991,7 +1021,7 @@
         "region2": ""
       },
       {
-        "description": "Defeat Nex Solo",
+        "description": "Defeat Nex Solo. You must not use Banker's Note",
         "difficulty": "Master",
         "region1": "Asgarnia",
         "region2": ""
@@ -1117,6 +1147,12 @@
         "region2": ""
       },
       {
+        "description": "Defeat Callisto. You must stand in his melee distance and cannot freeze it",
+        "difficulty": "Master",
+        "region1": "Wilderness",
+        "region2": ""
+      },
+      {
         "description": "Defeat the Corrupted Gauntlet. You may only use 1 Tier 1 weapon and your fist. You may not use the 5:1 method.",
         "difficulty": "Master",
         "region1": "Tirannwn",
@@ -1153,12 +1189,6 @@
         "region2": ""
       },
       {
-        "description": "Complete the Chambers of Xeric Challenge Mode solo. You may not use any of your own supplies or use any supplies provided within the raid",
-        "difficulty": "Master",
-        "region1": "Kourend",
-        "region2": ""
-      },
-      {
         "description": "Defeat Alchemical Hydra. You must not weaken it using any of the pools and must not take any damage",
         "difficulty": "Master",
         "region1": "Kourend",
@@ -1177,6 +1207,12 @@
         "region2": ""
       },
       {
+        "description": "Complete a full run of the Fortis Colloseum. You must only use melee and must have Bees and Totemic enabled at the earliest opportunity. Whenever you get an opportunity to upgrade one of the other, you must take it. You must complete the full run without taking any damage from Bees.",
+        "difficulty": "Master",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
         "description": "Complete the following action: Koyvec Psps psbwc Wydbsx cxyed dx",
         "difficulty": "Master",
         "region1": "Varlamore",
@@ -1189,9 +1225,9 @@
         "region2": ""
       },
       {
-        "description": "Complete the Fight Caves and Inferno back to back without banking or changing your gear/resupplying in any way. You must not use Bankers Note.",
-        "difficulty": "Grandmaster",
-        "region1": "General",
+        "description": "Earn a perfect streak of 3 kills only soloing the Hueycoatl. You must not leave the instance, resupply or use Banker's Note",
+        "difficulty": "Master",
+        "region1": "Varlamore",
         "region2": ""
       },
       {
@@ -1214,6 +1250,12 @@
       },
       {
         "description": "Solo Nex. Every time you take damage from any source you must type in chat, a word where all the characters mapped to the traditional alphabet equals the damage that you took. You will fail the challenge if you do not say a word equal to the correct value before Nex damages you again. A word is only acceptable if it can be found within the Oxford Dictionary and you must not say the same word twice.",
+        "difficulty": "Grandmaster",
+        "region1": "Asgarnia",
+        "region2": ""
+      },
+      {
+        "description": "Defeat three Tormented Demons at the same time with your entire screen rotated by 180 degrees. You must not take any damage and you must meet the requirements for the CA task ''Three Time's The Trashing''.",
         "difficulty": "Grandmaster",
         "region1": "Asgarnia",
         "region2": ""
@@ -1243,6 +1285,12 @@
         "region2": ""
       },
       {
+        "description": "Defeat Phantom Muspah. You must complete the CA tasks ''Phantom Muspah Manipulator'' and 'More than a ranged weapon'' in the same kill.",
+        "difficulty": "Grandmaster",
+        "region1": "Fremennik",
+        "region2": ""
+      },
+      {
         "description": "Defeat the Awakened Duke Sucellus. You must not use melee, run and must get a perfect kill.",
         "difficulty": "Grandmaster",
         "region1": "Fremennik",
@@ -1267,7 +1315,7 @@
         "region2": ""
       },
       {
-        "description": "Defeat Akkha solo at Path level 4 or higher in an 700 Raid Level TOA raid or higher. You must have all Akkha invocations enabled and you must not have Blazing Tombs 2 invocation enabled. You must have your camera spinning in one direction at all times throughout the fight.",
+        "description": "Defeat Akkha solo at Path level 4 or higher in an 700 Raid Level TOA raid or higher. You must have all Akkha invocations enabled and you must not have Blazing Tombs 2 invocation enabled. You must have your camera spinning in one direction at all times throughout the fight and must not take any unneccessary damage.",
         "difficulty": "Grandmaster",
         "region1": "Desert",
         "region2": ""
@@ -1280,6 +1328,12 @@
       },
       {
         "description": "Defeat the Elidinis Warden (The Warden which summons Akkha and Kephri) solo in a 700 Raid Level TOA or higher. You must have Insanity, Stay Vigilant, Aerial Assault enabled and Blazing Tombs 2 invocation must not be enabled. At the start of P3 Wardens you must rotate your camera into the birds eye view position and then lock it there for the rest of the fight. You must obstruct your view of Akkha with your inventory and your own character with your chatbox (you must not hide the UI elements at any point). You must meet the requirements for the CA task Perfect Wardens",
+        "difficulty": "Grandmaster",
+        "region1": "Desert",
+        "region2": ""
+      },
+      {
+        "description": "Complete a full run of the Tombs of Amascut in a 700 Raid Level or higher. You must have all boss invocations enabled and must not have Blazing Tombs 2 Invocation enabled. You must meet the requirements of ''Perfection of Crondis'', ''Perfection of Apmeken'', ''Perfection of Het'', ''Perfection of Scabras'' and ''Perfect Wardens'' in a single run.",
         "difficulty": "Grandmaster",
         "region1": "Desert",
         "region2": ""
@@ -1345,6 +1399,18 @@
         "region2": ""
       },
       {
+        "description": "Complete a solo run of Chambers of Xeric in less than 10 minutes",
+        "difficulty": "Grandmaster",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
+        "description": "Complete the Chambers of Xeric Challenge Mode solo. You may not use any of your own supplies or use any supplies provided within the raid",
+        "difficulty": "Grandmaster",
+        "region1": "Kourend",
+        "region2": ""
+      },
+      {
         "description": "Defeat the Awakened Vardorvis. You must meet the requirements for the CA task ''Axe Enthusiast''",
         "difficulty": "Grandmaster",
         "region1": "Kourend",
@@ -1355,6 +1421,18 @@
         "difficulty": "Grandmaster",
         "region1": "Varlamore",
         "region2": ""
+      },
+      {
+        "description": "Complete the Fortis Colloseum in less than 10 minutes",
+        "difficulty": "Grandmaster",
+        "region1": "Varlamore",
+        "region2": ""
+      },
+      {
+        "description": "Complete the following action: 712e9a5128054d12137e08885fa757da30f0d5574839d5c80a6c4d79669399a74c948d0e494ea57d66577ed6f63d7624dcaea1b4cda2da8da271eeff708349c63d83318a82719f17516d18d78a6e3f1b4fb0def2ab071d5b709f6c7107dd79b5079bdbbb3d61e32498c292378ca961b43e63ad26dbf4ba7a228974596c92290ea57a49d4a958f28b\n\nConsider the following:\n\nFind characters X1, X2 and X3.\nX1 = X3\nX1 - X2 = 1\nX1 + X2 + X3 = 8\n\nFind characters Y1, Y2, Y3, Y4, Y5\n(Y1 + Y2) x (Y3 + Y4) - Y5 = 587\nY3 < rest\nY4 > rest\nY2 > Y5 but Y2 < Y1\nY5 is not a letter\n\nFind characters Z1, Z2, Z3, Z4, Z5, Z6\n\nZ1, Z2, Z3, Z6 match an element in the subset of either set X or set Y\nZ5 is a factor of Z1 + Z2\nZ4 is a square root of Z1\n\nThe rest you need to experiment\n\n2 solves hide the answer.",
+        "difficulty": "Grandmaster",
+        "region1": "Varlamore",
+        "region2": "Kourend"
       }
     ]
   }

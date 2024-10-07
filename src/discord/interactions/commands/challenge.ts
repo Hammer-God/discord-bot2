@@ -4,9 +4,10 @@ import { Command } from './types';
 import { channelGroups } from '../../Channel';
 import { ChallengeMain } from '../../../database/models';
 import * as challenges from '../../../challenges';
+import getChallengeCardMessage from '../../messages/challenge';
 
 const challengeCommand: Command = {
-  channels: channelGroups.BOT_COMMANDS,
+  channels: channelGroups.SAGE_CHALLENGE,
   data: new SlashCommandBuilder()
     .setName('challenge')
     .setDescription("Creates and displays the Sage's Challenge Card!"),
@@ -93,7 +94,7 @@ const challengeCommand: Command = {
       }
 
       // Create and send the embedded challenge card message
-      const challengeEmbed = challenges.createChallengeEmbed(currentDifficultyTier, userDisplayName, challengeList);
+      const challengeEmbed = getChallengeCardMessage({difficulty: currentDifficultyTier, userDisplayName: userDisplayName, challenges: challengeList})
 
       // Add "Reroll" button if rerolls are available and not already rerolled
       if (challengeMain.numberOfRerolls > 0 && !rerolled) {

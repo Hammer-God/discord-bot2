@@ -8,7 +8,6 @@ import {
   } from '../src/database/models';
   import { ChallengeCardBase } from '../src/database/models/Challenge/ChallengeCard';
   import * as challengesData from '../src/challengeList/challenges.json';
-  import { MessageEmbed, GuildMember } from 'discord.js';
   
 /**
  * // Counts the number of region roles the user has for challenge eligibility
@@ -201,50 +200,6 @@ export function getChallengeCardEligibility(difficulty: string): number {
   }
   
   /**
-   * Creates a Discord MessageEmbed for the challenge card.
-   * @param difficulty - The difficulty tier.
-   * @param userDisplayName - The user's display name.
-   * @param challenges - An array of challenge descriptions.
-   * @returns A configured MessageEmbed object.
-   */
-  export function createChallengeEmbed(difficulty: string, userDisplayName: string, challenges: string[], ): MessageEmbed {
-    const embedColour = getEmbedColour(difficulty);
-    const challengeCount = getChallengeCount(difficulty);
-  
-    return new MessageEmbed()
-      .setColor(embedColour)
-      .setTitle(`Sage's ${difficulty} Challenge Card for ${userDisplayName}`)
-      .setDescription(
-        challenges
-          .slice(0, challengeCount)
-          .map((challenge, index) => `**Challenge ${index + 1}:**\n${challenge}`)
-          .join('\n\n'),
-      );
-  }
-  
-  /**
-   * Determines the embed color based on difficulty.
-   * @param difficulty - The difficulty tier.
-   * @returns The color code.
-   */
-  function getEmbedColour(difficulty: string): number {
-    switch (difficulty) {
-      case 'Novice':
-        return 0x00ff00; // Green
-      case 'Intermediate':
-        return 0xffff00; // Yellow
-      case 'Experienced':
-        return 0xffa500; // Orange
-      case 'Master':
-        return 0xff0000; // Red
-      case 'Grandmaster':
-        return 0x800080; // Purple
-      default:
-        return 0x00ff00; // Default to green
-    }
-  }
-  
-  /**
    * Determines the number of challenges based on difficulty.
    * @param difficulty - The difficulty tier.
    * @returns The number of challenges.
@@ -263,3 +218,7 @@ export function getChallengeCardEligibility(difficulty: string): number {
         return 3;
     }
   }
+
+export function createChallengeEmbed(currentDifficultyTier: string, userDisplayName: string, challengeList: string[]) {
+  throw new Error('Function not implemented.');
+}

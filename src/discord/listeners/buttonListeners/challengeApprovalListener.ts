@@ -16,12 +16,18 @@ const challengeApprovalButtonListener : ButtonListener = {
             if (action === 'approve') {
                 let challengeMain = await challenges.loadChallengeMain(userId);
                 if (challengeMain) {
-                    challengeMain.currentChallengeStatus = 'Completed';
                     await challenges.updateChallengeMain(userId, { currentChallengeStatus: 'Completed' });
 
                     // Send a DM to the user
-                    const targetUser = await interaction.client.users.fetch(userId);
-                    await targetUser.send(`Your challenge card has been approved for the difficulty tier: ${difficultyTier}. Congratulations!`);
+                    try 
+                    {
+                        const targetUser = await interaction.client.users.fetch(userId);
+                        await targetUser.send(`Your challenge card has been approved for the difficulty tier: ${difficultyTier}. Congratulations!`);
+                    }
+                    catch (dmError) 
+                    {
+                        await interaction.reply({ content: `<@${userId}> Your challenge card has been approved for the difficulty tier: ${difficultyTier}. Congratulations!`, ephemeral: false});
+                    }
 
                     // Remove the buttons from the original message
                     if (interaction.message instanceof Message) {
@@ -33,15 +39,20 @@ const challengeApprovalButtonListener : ButtonListener = {
             else if (action === 'reject') {
                 let challengeMain = await challenges.loadChallengeMain(userId);
                 if (challengeMain) {
-                    challengeMain.currentChallengeStatus = 'Started';
-                    await challenges.updateChallengeMain(userId, { currentChallengeStatus: 'Completed' });
+                    await challenges.updateChallengeMain(userId, { currentChallengeStatus: 'Started' });
                     // Standard rejection reason
                     const standardReason = 'Your evidence did not meet the requirements for the challenges set in your Challenge Card.';
-
+                    
                     // Send a DM to the user with the standard rejection reason
-                    const targetUser = await interaction.client.users.fetch(userId);
-                    await targetUser.send(`Your challenge card has been rejected for the difficulty tier: ${difficultyTier}. Reason: ${standardReason}`);
-
+                    try 
+                    {
+                        const targetUser = await interaction.client.users.fetch(userId);
+                        await targetUser.send(`Your challenge card has been rejected for the difficulty tier: ${difficultyTier}. Reason: ${standardReason}`);
+                    } 
+                    catch (dmError) 
+                    {
+                        await interaction.reply({ content: `<@${userId}> Your challenge card has been rejected for the difficulty tier: ${difficultyTier}. Reason: ${standardReason}`, ephemeral: false});
+                    }
                     // Remove the buttons from the original message
                     if (interaction.message instanceof Message) {
                         await interaction.message.edit({ components: [] });

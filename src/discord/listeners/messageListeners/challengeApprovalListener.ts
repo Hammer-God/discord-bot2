@@ -2,6 +2,7 @@ import { Message, MessageActionRow, MessageButton } from "discord.js";
 import * as challenges from "../../../challenges";
 import { ChannelListener } from "../types";
 import { setMessageExpiration } from "../utils";
+import getChallengeCardMessage from '../../messages/challenge';
 
 /**
  * Set error message to expire after 1 minute.
@@ -9,14 +10,14 @@ import { setMessageExpiration } from "../utils";
 const ERROR_LIFESPAN = 60 * 1000;
 
 /**
- * This listener is for the #sages-challenge-approval channel.
+ * This listener is for the #challenge-approval channel.
  */
 const challengeApprovalMessageListener: ChannelListener = {
   channels: [
     /**
      * OSRS Leagues bot
      */
-
+    "1292966146894467177",
     /**
      * Bot Testing Server
      */
@@ -37,7 +38,7 @@ const challengeApprovalMessageListener: ChannelListener = {
           const existingChallenges = await challenges.loadChallengeCard(userId, currentDifficultyTier);
           if (existingChallenges) {
             const challengeList = challenges.existingChallengesToList(existingChallenges, currentDifficultyTier);
-            const challengeEmbed = challenges.createChallengeEmbed(currentDifficultyTier, userDisplayName, challengeList);
+            const challengeEmbed = getChallengeCardMessage({difficulty: currentDifficultyTier, userDisplayName: userDisplayName, challenges: challengeList})
             
             const approveButton = new MessageButton()
               .setCustomId(`approve ${userId} ${currentDifficultyTier}`)

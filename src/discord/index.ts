@@ -1,8 +1,7 @@
-import { Client, Intents, Interaction } from 'discord.js';
+import { Client, Intents } from 'discord.js';
 
 import config from '../config';
-import { handleButtonInteraction, handleMessageCreate } from './listeners/';
-import buttonListener from './listeners/buttonListeners/challengeApprovalListener'; 
+import { handleMessageCreate } from './listeners';
 import interactions from './interactions';
 
 export const client = new Client({
@@ -15,17 +14,8 @@ export const initializeDiscord = (callback?: () => void) => {
     callback?.();
   });
 
-  // Handle messageCreate event
   client.on('messageCreate', handleMessageCreate);
 
-  // Handle button interactions
-  client.on('interactionCreate', async (interaction: Interaction) => {
-    if (interaction.isButton()) {
-      await handleButtonInteraction(interaction)
-    }
-  });
-
-  // Initialize other interaction handlers
   interactions.forEach((interactionHandler) => {
     client.on('interactionCreate', interactionHandler);
   });

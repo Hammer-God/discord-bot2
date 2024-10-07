@@ -1,6 +1,7 @@
 import { ButtonInteraction, Message, GuildMember } from 'discord.js';
 import * as challenges from '../../../challenges';
 import { ButtonListener } from '../types';
+import getChallengeCardMessage from '../../messages/challenge';
 
 const challengeRerollButtonListener : ButtonListener = {
     buttons: ['reroll'],
@@ -56,7 +57,8 @@ const challengeRerollButtonListener : ButtonListener = {
                             // Update challengeMain's number of rerolls remaining
                             await challenges.updateChallengeMain(userId, {numberOfRerolls: numberOfRerolls});
 
-                            const challengeEmbed = challenges.createChallengeEmbed(currentDifficultyTier, userDisplayName, challengeList);
+                            const challengeEmbed = getChallengeCardMessage({difficulty: currentDifficultyTier, userDisplayName: userDisplayName, challenges: challengeList})
+
                             await interaction.reply({ embeds: [challengeEmbed]});
                             
                             // Remove the buttons from the original message

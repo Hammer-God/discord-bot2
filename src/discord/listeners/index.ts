@@ -1,7 +1,6 @@
 import { ButtonInteraction, Message } from 'discord.js';
 import impSpottingListener from './messageListeners/impSpottingListener';
 import challengeApprovalMessageListener from './messageListeners/challengeApprovalListener';
-import { ButtonListener } from './types';
 import challengeApprovalButtonListener from './buttonListeners/challengeApprovalListener';
 import challengeRerollButtonListener from './buttonListeners/challengeRerollListener';
 
@@ -16,6 +15,11 @@ export const handleMessageCreate = (message: Message) => {
 };
 
 export const handleButtonInteraction = async (interaction: ButtonInteraction) => {
+  if (!interaction.customId) 
+  {
+    return;
+  }
+
   // Filter listeners that start with the button customId
   const validListeners = buttonListeners.filter((listener) =>
     listener.buttons.some((buttonId) => interaction.customId.startsWith(buttonId)),
