@@ -1,4 +1,4 @@
-import { handleButtonInteraction } from '../listeners';
+import { handleButtonInteraction } from './buttons';
 import { handleCommandInteraction } from './commands';
 import { handleSelectMenuInteraction } from './selectMenus';
 

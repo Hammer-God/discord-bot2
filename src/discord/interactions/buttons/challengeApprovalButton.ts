@@ -1,8 +1,8 @@
 import { ButtonInteraction, Message, GuildMember } from 'discord.js';
 import * as challenges from '../../../challenges';
-import { ButtonListener } from '../types';
+import { Button } from './types';
 
-const challengeApprovalButtonListener: ButtonListener = {
+const challengeApprovalButton: Button = {
   buttons: ['approve', 'reject'],
   onButtonInteraction: async (interaction: ButtonInteraction) => {
     const { customId } = interaction;
@@ -88,4 +88,4 @@ const challengeApprovalButtonListener: ButtonListener = {
   },
 };
 
-export default challengeApprovalButtonListener;
+export default challengeApprovalButton;

@@ -1,9 +1,9 @@
 import { ButtonInteraction, Message, GuildMember } from 'discord.js';
 import * as challenges from '../../../challenges';
-import { ButtonListener } from '../types';
 import getChallengeCardMessage from '../../messages/challenge';
+import { Button } from './types';
 
-const challengeRerollButtonListener: ButtonListener = {
+const challengeRerollButton: Button = {
   buttons: ['reroll'],
   onButtonInteraction: async (interaction: ButtonInteraction) => {
     const { customId } = interaction;
@@ -122,4 +122,4 @@ const challengeRerollButtonListener: ButtonListener = {
   },
 };
 
-export default challengeRerollButtonListener;
+export default challengeRerollButton;
