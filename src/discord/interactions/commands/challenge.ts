@@ -33,83 +33,137 @@ const challengeCommand: Command = {
         numberOfRerolls = challengeMain.numberOfRerolls;
 
         // Check if user has completed Grandmaster
-        if (currentDifficultyTier === 'Grandmaster' && currentChallengeStatus === 'Completed') {
+        if (
+          currentDifficultyTier === 'Grandmaster' &&
+          currentChallengeStatus === 'Completed'
+        ) {
           await interaction.reply({
-            content: "You have completed the Sage's Challenge event! There's nothing left to do.",
+            content:
+              "You have completed the Sage's Challenge event! There's nothing left to do.",
             ephemeral: true,
           });
           return;
         }
-        if (currentChallengeStatus === 'Started' || currentChallengeStatus === 'Approval') {
+        if (
+          currentChallengeStatus === 'Started' ||
+          currentChallengeStatus === 'Approval'
+        ) {
           // Load existing challenges
-          const existingChallenges = await challenges.loadChallengeCard(userId, currentDifficultyTier);
+          const existingChallenges = await challenges.loadChallengeCard(
+            userId,
+            currentDifficultyTier,
+          );
           rerolled = existingChallenges.rerolled;
           if (existingChallenges) {
-            challengeList = challenges.existingChallengesToList(existingChallenges, currentDifficultyTier);
+            challengeList = challenges.existingChallengesToList(
+              existingChallenges,
+              currentDifficultyTier,
+            );
           }
-        } 
-        else if (currentChallengeStatus === 'Completed') {
+        } else if (currentChallengeStatus === 'Completed') {
           // Promote to next tier
-          const nextTier = challenges.getNextDifficultyTier(currentDifficultyTier);
+          const nextTier = challenges.getNextDifficultyTier(
+            currentDifficultyTier,
+          );
           currentDifficultyTier = nextTier;
           currentChallengeStatus = 'Started';
 
           // Region role requirement check based on difficulty
           const regionRoleCount = challenges.getRegionRoleCount(userRoles);
-          const requiredRegionRoles = challenges.getChallengeCardEligibility(currentDifficultyTier);
+          const requiredRegionRoles = challenges.getChallengeCardEligibility(
+            currentDifficultyTier,
+          );
 
           if (regionRoleCount < requiredRegionRoles) {
-            await interaction.reply({content: `You need at least ${requiredRegionRoles} region role(s) to generate challenges for ${currentDifficultyTier} difficulty. Please acquire the necessary region roles and try again.`, ephemeral: true});
+            await interaction.reply({
+              content: `You need at least ${requiredRegionRoles} region role(s) to generate challenges for ${currentDifficultyTier} difficulty. Please acquire the necessary region roles and try again.`,
+              ephemeral: true,
+            });
             return;
           }
 
           // Generate new challenges for the next tier
-          challengeList = challenges.generateNewChallenges(currentDifficultyTier, userRoles);
+          challengeList = challenges.generateNewChallenges(
+            currentDifficultyTier,
+            userRoles,
+          );
 
           // Save new challenges
-          await challenges.saveChallengeCard(userId, currentDifficultyTier, challengeList, rerolled);
-          
-          // Update ChallengeMain with new tier and status
-          await challenges.updateChallengeMain(userId, {currentDifficultyTier, currentChallengeStatus});
-        }
-      } 
-      else {
+          await challenges.saveChallengeCard(
+            userId,
+            currentDifficultyTier,
+            challengeList,
+            rerolled,
+          );
 
+          // Update ChallengeMain with new tier and status
+          await challenges.updateChallengeMain(userId, {
+            currentDifficultyTier,
+            currentChallengeStatus,
+          });
+        }
+      } else {
         // Region role requirement check based on difficulty
         const regionRoleCount = challenges.getRegionRoleCount(userRoles);
-        const requiredRegionRoles = challenges.getChallengeCardEligibility('Novice');
+        const requiredRegionRoles =
+          challenges.getChallengeCardEligibility('Novice');
 
         if (regionRoleCount < requiredRegionRoles) {
-          await interaction.reply({content: `You need at least ${requiredRegionRoles} region role(s) to generate challenges for Novice difficulty. Please acquire the necessary region roles and try again.`, ephemeral: true});
+          await interaction.reply({
+            content: `You need at least ${requiredRegionRoles} region role(s) to generate challenges for Novice difficulty. Please acquire the necessary region roles and try again.`,
+            ephemeral: true,
+          });
           return;
         }
         // New user: Create Novice challenges and ChallengeMain entry
         challengeList = challenges.generateNewChallenges('Novice', userRoles);
 
         // Create ChallengeMain entry
-        challengeMain = await ChallengeMain.create({user_id: userId, currentDifficultyTier: 'Novice', currentChallengeStatus: 'Started', numberOfRerolls: 2});
+        challengeMain = await ChallengeMain.create({
+          user_id: userId,
+          currentDifficultyTier: 'Novice',
+          currentChallengeStatus: 'Started',
+          numberOfRerolls: 2,
+        });
 
         // Save Novice challenges
-        await challenges.saveChallengeCard(userId, 'Novice', challengeList, rerolled);
+        await challenges.saveChallengeCard(
+          userId,
+          'Novice',
+          challengeList,
+          rerolled,
+        );
       }
 
       // Create and send the embedded challenge card message
-      const challengeEmbed = getChallengeCardMessage({difficulty: currentDifficultyTier, userDisplayName: userDisplayName, challenges: challengeList})
+      const challengeEmbed = getChallengeCardMessage({
+        difficulty: currentDifficultyTier,
+        userDisplayName: userDisplayName,
+        challenges: challengeList,
+      });
 
       // Add "Reroll" button if rerolls are available and not already rerolled
       if (challengeMain.numberOfRerolls > 0 && !rerolled) {
-        const rerollButton = new MessageButton().setCustomId(`reroll ${userId} ${currentDifficultyTier}`).setLabel(`Reroll (${challengeMain.numberOfRerolls} remaining)`).setStyle('PRIMARY');
+        const rerollButton = new MessageButton()
+          .setCustomId(`reroll ${userId} ${currentDifficultyTier}`)
+          .setLabel(`Reroll (${challengeMain.numberOfRerolls} remaining)`)
+          .setStyle('PRIMARY');
         const row = new MessageActionRow().addComponents(rerollButton);
 
-        await interaction.reply({ embeds: [challengeEmbed], components: [row] });
+        await interaction.reply({
+          embeds: [challengeEmbed],
+          components: [row],
+        });
+      } else {
+        await interaction.reply({ embeds: [challengeEmbed] });
       }
-      else {
-        await interaction.reply({ embeds: [challengeEmbed]});
-      }
-    } 
-    catch (error) {
+    } catch (error) {
       console.error('Error executing challenge command: ', error);
-      await interaction.reply({content: 'There was an error processing your challenge. Please try again later.', ephemeral: true});
+      await interaction.reply({
+        content:
+          'There was an error processing your challenge. Please try again later.',
+        ephemeral: true,
+      });
     }
   },
 };

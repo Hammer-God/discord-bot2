@@ -1,7 +1,7 @@
-import { Message, MessageActionRow, MessageButton } from "discord.js";
-import * as challenges from "../../../challenges";
-import { ChannelListener } from "../types";
-import { setMessageExpiration } from "../utils";
+import { Message, MessageActionRow, MessageButton } from 'discord.js';
+import * as challenges from '../../../challenges';
+import { ChannelListener } from '../types';
+import { setMessageExpiration } from '../utils';
 import getChallengeCardMessage from '../../messages/challenge';
 
 /**
@@ -17,11 +17,11 @@ const challengeApprovalMessageListener: ChannelListener = {
     /**
      * OSRS Leagues bot
      */
-    "1292966146894467177",
+    '1292966146894467177',
     /**
      * Bot Testing Server
      */
-    "1287884980386529300",
+    '1287884980386529300',
   ],
   onChannelMessage: async (message: Message) => {
     if (message.author.bot) {
@@ -30,66 +30,87 @@ const challengeApprovalMessageListener: ChannelListener = {
     const userId = message.author.id;
     const userDisplayName = message.author.username;
     try {
-      let challengeMain = await challenges.loadChallengeMain(userId);
+      const challengeMain = await challenges.loadChallengeMain(userId);
       if (challengeMain) {
-        let currentDifficultyTier = challengeMain.currentDifficultyTier;
+        const currentDifficultyTier = challengeMain.currentDifficultyTier;
         let currentChallengeStatus = challengeMain.currentChallengeStatus;
-        if (currentChallengeStatus === "Started") {
-          const existingChallenges = await challenges.loadChallengeCard(userId, currentDifficultyTier);
+        if (currentChallengeStatus === 'Started') {
+          const existingChallenges = await challenges.loadChallengeCard(
+            userId,
+            currentDifficultyTier,
+          );
           if (existingChallenges) {
-            const challengeList = challenges.existingChallengesToList(existingChallenges, currentDifficultyTier);
-            const challengeEmbed = getChallengeCardMessage({difficulty: currentDifficultyTier, userDisplayName: userDisplayName, challenges: challengeList})
-            
+            const challengeList = challenges.existingChallengesToList(
+              existingChallenges,
+              currentDifficultyTier,
+            );
+            const challengeEmbed = getChallengeCardMessage({
+              difficulty: currentDifficultyTier,
+              userDisplayName: userDisplayName,
+              challenges: challengeList,
+            });
+
             const approveButton = new MessageButton()
               .setCustomId(`approve ${userId} ${currentDifficultyTier}`)
-              .setLabel("Approve")
-              .setStyle("SUCCESS"); // Green button
+              .setLabel('Approve')
+              .setStyle('SUCCESS'); // Green button
 
             const rejectButton = new MessageButton()
               .setCustomId(`reject ${userId} ${currentDifficultyTier}`)
-              .setLabel("Reject")
-              .setStyle("DANGER"); // Red button
+              .setLabel('Reject')
+              .setStyle('DANGER'); // Red button
 
-            const row = new MessageActionRow().addComponents(approveButton, rejectButton);
+            const row = new MessageActionRow().addComponents(
+              approveButton,
+              rejectButton,
+            );
 
-            currentChallengeStatus = "Approval";
-            await challenges.updateChallengeMain(userId, {currentChallengeStatus: currentChallengeStatus});
-            await message.channel.send({embeds: [challengeEmbed], components: [row]});
+            currentChallengeStatus = 'Approval';
+            await challenges.updateChallengeMain(userId, {
+              currentChallengeStatus: currentChallengeStatus,
+            });
+            await message.channel.send({
+              embeds: [challengeEmbed],
+              components: [row],
+            });
           }
-        } 
-        else if (currentChallengeStatus === "Approval") {
-          const response = await message.reply("Your Challenge Card is already awaiting approval. Please wait for a decision.");
+        } else if (currentChallengeStatus === 'Approval') {
+          const response = await message.reply(
+            'Your Challenge Card is already awaiting approval. Please wait for a decision.',
+          );
           setMessageExpiration(message, 100);
           setMessageExpiration(response, ERROR_LIFESPAN);
           return;
-        } 
-        else if (currentChallengeStatus === "Completed") {
-          if (currentDifficultyTier !== "Grandmaster") {
+        } else if (currentChallengeStatus === 'Completed') {
+          if (currentDifficultyTier !== 'Grandmaster') {
             const response = await message.reply(
-              "Your Challenge Card has already been approved. Please generate a new Challenge Card in the Challenge Bot Commands channel."
+              'Your Challenge Card has already been approved. Please generate a new Challenge Card in the Challenge Bot Commands channel.',
             );
             setMessageExpiration(message, 100);
             setMessageExpiration(response, ERROR_LIFESPAN);
             return;
-          } 
-          else {
-            const response = await message.reply("You have completed all of the Challenge Cards for this event. There is nothing else left for you to do.");
+          } else {
+            const response = await message.reply(
+              'You have completed all of the Challenge Cards for this event. There is nothing else left for you to do.',
+            );
             setMessageExpiration(message, 100);
             setMessageExpiration(response, ERROR_LIFESPAN);
             return;
           }
-        } 
-        else {
-          const response = await message.reply("You have not yet generated a Challenge Card. Please do so in the Challenge Bot Commands channel.");
+        } else {
+          const response = await message.reply(
+            'You have not yet generated a Challenge Card. Please do so in the Challenge Bot Commands channel.',
+          );
           setMessageExpiration(message, 100);
           setMessageExpiration(response, ERROR_LIFESPAN);
           return;
         }
       }
-    } 
-    catch (error) {
-      console.error("Error in challenge approval listener: ", error);
-      const response = await message.reply("There was an error processing your challenge approval request. Please try again later.");
+    } catch (error) {
+      console.error('Error in challenge approval listener: ', error);
+      const response = await message.reply(
+        'There was an error processing your challenge approval request. Please try again later.',
+      );
       setMessageExpiration(message, 100);
       setMessageExpiration(response, ERROR_LIFESPAN);
     }

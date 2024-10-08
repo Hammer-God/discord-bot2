@@ -2,7 +2,7 @@ import { DataTypes, Sequelize, Model } from 'sequelize';
 
 interface ChallengeMainAttributes {
   user_id: string;
-  currentDifficultyTier: string
+  currentDifficultyTier: string;
   currentChallengeStatus: string;
   numberOfRerolls: number;
 }
@@ -11,10 +11,10 @@ class ChallengeMain
   extends Model<ChallengeMainAttributes>
   implements ChallengeMainAttributes
 {
-    user_id: string;
-    currentDifficultyTier: string
-    currentChallengeStatus: string;
-    numberOfRerolls: number;
+  user_id: string;
+  currentDifficultyTier: string;
+  currentChallengeStatus: string;
+  numberOfRerolls: number;
 
   declare readonly createdAt: Date;
   declare readonly updatedAt: Date;

@@ -5,11 +5,11 @@ class IntermediateChallengeCard
   extends Model<ChallengeCardBase>
   implements ChallengeCardBase
 {
-    user_id: string;
-    challengeOne: string;
-    challengeTwo: string;
-    challengeThree: string;
-    rerolled: number;
+  user_id: string;
+  challengeOne: string;
+  challengeTwo: string;
+  challengeThree: string;
+  rerolled: number;
 
   declare readonly createdAt: Date;
   declare readonly updatedAt: Date;

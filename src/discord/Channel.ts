@@ -23,7 +23,7 @@ enum Channel {
   /**
    * #challenge-commands
    */
-  SageChallengeCommands = '1292966070507929621'
+  SageChallengeCommands = '1292966070507929621',
 }
 
 export const channelGroups = {
@@ -45,10 +45,7 @@ export const channelGroups = {
     Channel.BotCommandsServer,
     Channel.BotCommandsTest,
   ],
-  TESTING: [
-    Channel.BotCommandsServer, 
-    Channel.BotCommandsTest,
-  ],
+  TESTING: [Channel.BotCommandsServer, Channel.BotCommandsTest],
   SAGE_CHALLENGE: [
     Channel.BotCommandsTest,
     Channel.BotCommandsServer,
