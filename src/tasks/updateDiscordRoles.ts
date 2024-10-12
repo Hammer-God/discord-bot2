@@ -29,7 +29,7 @@ const updateDiscordRoles: Task<undefined, number> = {
             if (guildMember) {
               const leagueUser = await getLeagueAttributes(
                 CURRENT_LEAGUE,
-                discordUser[leagueNameIdentifier],
+                discordUser.get(leagueNameIdentifier) as string,
               );
               if (leagueUser) {
                 const rank = getRank(leagueUser.points, CURRENT_LEAGUE);
