@@ -1,12 +1,6 @@
 {
   "challenges": [
     {
-      "description": "Defeat Bryophyta using only woodcutting axes.",
-      "difficulty": "Novice",
-      "region1": "General",
-      "region2": ""
-    },
-    {
       "description": "Kick the Evil Chicken in the Champions Guild to death",
       "difficulty": "Novice",
       "region1": "General",
@@ -133,6 +127,18 @@
       "region2": ""
     },
     {
+      "description": "Spy on the wizard's tower",
+      "difficulty": "Novice",
+      "region1": "General",
+      "region2": ""
+    },
+    {
+      "description": "Kill 3 imps in less than 6 seconds",
+      "difficulty": "Novice",
+      "region1": "General",
+      "region2": ""
+    },
+    {
       "description": "Defeat a Tree Spirit in the Enchanted Valley using only Magic Secateurs",
       "difficulty": "Novice",
       "region1": "Asgarnia",
@@ -217,6 +223,12 @@
       "region2": ""
     },
     {
+      "description": "Mine Red Topaz from a gem rock outside of Karamja",
+      "difficulty": "Novice",
+      "region1": "Fremennik",
+      "region2": ""
+    },
+    {
       "description": "Obtain Shantay's Secret Ungathanki Kebab recipe",
       "difficulty": "Novice",
       "region1": "Desert",
@@ -268,12 +280,6 @@
       "description": "Obtain the 3 Mort Myre Fungus drop from a single Swamp Crab",
       "difficulty": "Novice",
       "region1": "Morytania",
-      "region2": ""
-    },
-    {
-      "description": "Defeat a Runite Golem in the Resource area using only a pickaxe. You do not need to mine the golem once defeated",
-      "difficulty": "Novice",
-      "region1": "Wilderness",
       "region2": ""
     },
     {
@@ -380,6 +386,18 @@
     },
     {
       "description": "Defeat the Deranged Archeologist. You must not move out of his melee distance at any point during the fight.",
+      "difficulty": "Intermediate",
+      "region1": "General",
+      "region2": ""
+    },
+    {
+      "description": "Defeat Bryophyta using only woodcutting axes.",
+      "difficulty": "Intermediate",
+      "region1": "General",
+      "region2": ""
+    },
+    {
+      "description": "Complete a solo game of Volcanic Mine. You must achieve a minimum of 2,000 base points in a single game excluding the minigame point multiplier",
       "difficulty": "Intermediate",
       "region1": "General",
       "region2": ""
@@ -565,6 +583,12 @@
       "region2": ""
     },
     {
+      "description": "Defeat a Runite Golem in the Resource area using only a pickaxe. You do not need to mine the golem once defeated",
+      "difficulty": "Intermediate",
+      "region1": "Wilderness",
+      "region2": ""
+    },
+    {
       "description": "Defeat the 'Rabbit'",
       "difficulty": "Intermediate",
       "region1": "Tirannwn",
@@ -667,6 +691,24 @@
       "region2": ""
     },
     {
+      "description": "Loot all six individual chests in the Aldarin Villas in less than 3 minutes",
+      "difficulty": "Intermediate",
+      "region1": "Varlamore",
+      "region2": ""
+    },
+    {
+      "description": "Defeat Amoxliatl. You must not take any damage and must not have your protection prayers enabled for more than one consecetive tick.",
+      "difficulty": "Intermediate",
+      "region1": "Varlamore",
+      "region2": ""
+    },
+    {
+      "description": "Defeat Amoxliatl. Every time it does the Icicle Crash attack, you must cast a fire spell before the attack hits you. You must not take any damage.",
+      "difficulty": "Intermediate",
+      "region1": "Varlamore",
+      "region2": ""
+    },
+    {
       "description": "Find a nasty surprise",
       "difficulty": "Intermediate",
       "region1": "Varlamore",
@@ -736,7 +778,7 @@
       "description": "Defeat the Whisperer. You must not move diagonally or in an L shape. You must not take any damage from the Shadow Tentacles",
       "difficulty": "Experienced",
       "region1": "Asgarnia",
-      "region2": "Desert"
+      "region2": ""
     },
     {
       "description": "Burn an oomlie wrap",
@@ -796,7 +838,7 @@
       "description": "Defeat Duke Sucellus. You must not use Arder-musca poison to wake him up.",
       "difficulty": "Experienced",
       "region1": "Fremennik",
-      "region2": "Desert"
+      "region2": ""
     },
     {
       "description": "Poison a Turoth",
@@ -913,6 +955,24 @@
       "region2": ""
     },
     {
+      "description": "Defeat the ''Rabbit''. You must not move, freeze or stun. You may not use prayer and you must not leave the dungeon once you have started the fight. You must not use Banker's Note",
+      "difficulty": "Experienced",
+      "region1": "Tirannwn",
+      "region2": ""
+    },
+    {
+      "description": "Catch three Crystal Implings in less than 90 seconds.",
+      "difficulty": "Experienced",
+      "region1": "Tirannwn",
+      "region2": ""
+    },
+    {
+      "description": "Defeat the Crystalline Hunllef. You must not reveal more than 12 rooms. The starting room and the boss room count towards this total",
+      "difficulty": "Experienced",
+      "region1": "Tirannwn",
+      "region2": ""
+    },
+    {
       "description": "Defeat Vanguards solo in Chambers of Xeric. You must attack a different Vanguard after every attack and must not let them reset",
       "difficulty": "Experienced",
       "region1": "Kourend",
@@ -926,6 +986,12 @@
     },
     {
       "description": "Defeat Sarachnis. Every time you are stunned, you must perform the Ring of Stone tech. You must perform this tick perfect every time. You must not use Arenea Boots.",
+      "difficulty": "Experienced",
+      "region1": "Kourend",
+      "region2": ""
+    },
+    {
+      "description": "Defeat the Mimic. You must not move during the fight and after every candy attack you must consume a purple sweet. You may only deal damage to the Mimic using special attacks. You may not use Banker's Note",
       "difficulty": "Experienced",
       "region1": "Kourend",
       "region2": ""
@@ -1030,13 +1096,13 @@
       "description": "Defeat the Whisperer. You must only cast spells from the Ancient Magic spellbook. You must manually cast each spell in this order. Smoke -> Shadow -> Blood -> Ice. You must then repeat the cycle throughout the kill. Once you reach the enraged phase, you must reverse this order so its Ice -> Blood -> Shadow -> Smoke. You must not take any damage off prayer.",
       "difficulty": "Master",
       "region1": "Asgarnia",
-      "region2": "Desert"
+      "region2": ""
     },
     {
       "description": "Defeat the Awakened Whisperer. You must not move diagonally or in an L shape.You must not take any damage from the Shadow Tentacles",
       "difficulty": "Master",
       "region1": "Asgarnia",
-      "region2": "Desert"
+      "region2": ""
     },
     {
       "description": "Defeat three Demonic Gorillas at the same time. You must not take any damage and all three demonic gorillas must be killed in consecutive hits",
@@ -1076,6 +1142,12 @@
     },
     {
       "description": "Defeat Vorkath. You must have the Tileman plugin enabled and must not step on a tile you have already stood on. You must move 2 tiles between every attack",
+      "difficulty": "Master",
+      "region1": "Fremennik",
+      "region2": ""
+    },
+    {
+      "description": "Defeat the Phantom Muspah. You must only use melee. You must only walk and may only move in a diagonal direction. Every 2 tiles you must change direction. You must complete a perfect kill",
       "difficulty": "Master",
       "region1": "Fremennik",
       "region2": ""
@@ -1153,13 +1225,19 @@
       "region2": ""
     },
     {
-      "description": "Defeat the Corrupted Gauntlet. You may only use 1 Tier 1 weapon and your fist. You may not use the 5:1 method.",
+      "description": "Defeat the Corrupted Gauntlet. You may only use 1 Tier 1 weapon and your fist. You may not use the 5:1 method. You must meet the requirements for the CA task ''Perfect Corrupted Hunllef''",
       "difficulty": "Master",
       "region1": "Tirannwn",
       "region2": ""
     },
     {
       "description": "Defeat the Corrupted Gauntlet. You may only walk and must not lose any ticks when attacking the Hunlief. You must use melee as one of your combat styles",
+      "difficulty": "Master",
+      "region1": "Tirannwn",
+      "region2": ""
+    },
+    {
+      "description": "Defeat the Corrupted Gauntlet. You must use melee as one of your combat styles. You must only move in diagonal lines and must not walk. You must meet the requirements for the CA task ''Perfect Corrupted Hunllef''",
       "difficulty": "Master",
       "region1": "Tirannwn",
       "region2": ""
@@ -1195,12 +1273,6 @@
       "region2": ""
     },
     {
-      "description": "Defeat Vardorvis. You must start with a Rune Scimitar and must swap to the following weapons at the following hp thresholds: 80% hp -> Adamant Scimitar, 60% hp Mithril Scimitar -> 40% hp Steel Scimitar and 20% hp -> Iron Scimitar. You must deal the final blow using a Bronze Scimitar.",
-      "difficulty": "Master",
-      "region1": "Kourend",
-      "region2": "Desert"
-    },
-    {
       "description": "Defeat Sol Heredit without using melee.",
       "difficulty": "Master",
       "region1": "Varlamore",
@@ -1231,6 +1303,18 @@
       "region2": ""
     },
     {
+      "description": "Defeat Vardorvis. You must start with a Rune Scimitar and must swap to the following weapons at the following hp thresholds: 80% hp -> Adamant Scimitar, 60% hp Mithril Scimitar -> 40% hp Steel Scimitar and 20% hp -> Iron Scimitar. You must deal the final blow using a Bronze Scimitar.",
+      "difficulty": "Master",
+      "region1": "Varlamore",
+      "region2": ""
+    },
+    {
+      "description": "Defeat Vardorvis. Every time the head attacks you, you must manually cast a blood spell. The blood spell must hit Vardorvis before the head's attack hits you. You must not take any damage from Vardorvis's head.",
+      "difficulty": "Master",
+      "region1": "Varlamore",
+      "region2": ""
+    },
+    {
       "description": "Complete the 6th Jad Challenge and the League only Jad Challenge in a row without failure",
       "difficulty": "Grandmaster",
       "region1": "General",
@@ -1244,6 +1328,12 @@
     },
     {
       "description": "Complete a Pillarless Inferno. You must only attack each Jal-MejJak once and must not kill any. You must not kill Jad during Zuk. You must meet the requirements for the CA task ''Wasn't Even Close''",
+      "difficulty": "Grandmaster",
+      "region1": "General",
+      "region2": ""
+    },
+    {
+      "description": "Complete the Inferno. Throughout the entire run, you must only move [2,1] or [1,2] tiles in a single tick whereas your movement resembles a Knight in Chess.",
       "difficulty": "Grandmaster",
       "region1": "General",
       "region2": ""
@@ -1264,13 +1354,13 @@
       "description": "Defeat the Awakened Whisperer. You must only cast spells from the Ancient Magic spellbook. You must manually cast each spell in this order. Smoke -> Shadow -> Blood -> Ice. You must then repeat the cycle throughout the kill. Once you reach the enraged phase, you must reverse this order so its Ice -> Blood -> Shadow -> Smoke. You must not take any damage off prayer.",
       "difficulty": "Grandmaster",
       "region1": "Asgarnia",
-      "region2": "Desert"
+      "region2": ""
     },
     {
       "description": "Defeat the Whisperer using only Melee and standing in its melee distance.",
       "difficulty": "Grandmaster",
       "region1": "Asgarnia",
-      "region2": "Desert"
+      "region2": ""
     },
     {
       "description": "Defeat three Demonic Gorillas at the same time with your entire screen rotated by 180 degrees. You must not take any damage and all three demonic gorillas must be killed in consecutive hits.",
@@ -1294,13 +1384,13 @@
       "description": "Defeat the Awakened Duke Sucellus. You must not use melee, run and must get a perfect kill.",
       "difficulty": "Grandmaster",
       "region1": "Fremennik",
-      "region2": "Desert"
+      "region2": ""
     },
     {
       "description": "Defeat the Awakened Duke Sucellus. You must not run, must attack on the same tick that Duke attacks each time and not miss any attacks you could have gotten. You must get a perfect kill.",
       "difficulty": "Grandmaster",
       "region1": "Fremennik",
-      "region2": "Desert"
+      "region2": ""
     },
     {
       "description": "Defeat the Awakened Leviathan. Your monitor must be set to black and white mode and you must not take any damage off prayer",
@@ -1375,6 +1465,12 @@
       "region2": ""
     },
     {
+      "description": "Kick the Corporeal Beast to death. You must not kill the Dark Core or take any damage from the dark core.",
+      "difficulty": "Grandmaster",
+      "region1": "Wilderness",
+      "region2": ""
+    },
+    {
       "description": "Defeat the Corrupted Gauntlet in less than 3 minutes.",
       "difficulty": "Grandmaster",
       "region1": "Tirannwn",
@@ -1411,12 +1507,6 @@
       "region2": ""
     },
     {
-      "description": "Defeat the Awakened Vardorvis. You must meet the requirements for the CA task ''Axe Enthusiast''",
-      "difficulty": "Grandmaster",
-      "region1": "Kourend",
-      "region2": "Desert"
-    },
-    {
       "description": "Defeat Sol Heredit. You must not hide behind any pillar at any point throughout the Colloseum run. Whenever Doom I, Doom II or Doom III is offered as a modifier you must choose it.",
       "difficulty": "Grandmaster",
       "region1": "Varlamore",
@@ -1424,6 +1514,12 @@
     },
     {
       "description": "Complete the Fortis Colloseum in less than 10 minutes",
+      "difficulty": "Grandmaster",
+      "region1": "Varlamore",
+      "region2": ""
+    },
+    {
+      "description": "Defeat the Awakened Vardorvis. You must meet the requirements for the CA task ''Axe Enthusiast''",
       "difficulty": "Grandmaster",
       "region1": "Varlamore",
       "region2": ""

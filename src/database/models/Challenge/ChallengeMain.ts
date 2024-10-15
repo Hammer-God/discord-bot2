@@ -1,54 +1,47 @@
-import { DataTypes, Sequelize, Model } from 'sequelize';
+import { CreationOptional, DataTypes, Sequelize } from 'sequelize';
+import { InitializableModel } from '../types';
 
-interface ChallengeMainAttributes {
-  user_id: string;
-  currentDifficultyTier: string;
-  currentChallengeStatus: string;
-  numberOfRerolls: number;
+class ChallengeMain extends InitializableModel<ChallengeMain> {
+  declare user_id: string;
+  declare currentDifficultyTier: string;
+  declare currentChallengeStatus: string;
+  declare numberOfRerolls: number;
+
+  declare readonly createdAt: CreationOptional<Date>;
+  declare readonly updatedAt: CreationOptional<Date>;
+
+  static initialize = (sequelize: Sequelize) => {
+    ChallengeMain.init(
+      {
+        user_id: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          primaryKey: true,
+          unique: true,
+        },
+        currentDifficultyTier: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        currentChallengeStatus: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        numberOfRerolls: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+        },
+        createdAt: DataTypes.DATE,
+        updatedAt: DataTypes.DATE,
+      },
+      {
+        tableName: 'ChallengeMain',
+        sequelize,
+      },
+    );
+  };
+
+  static initializeAssociations() {}
 }
-
-class ChallengeMain
-  extends Model<ChallengeMainAttributes>
-  implements ChallengeMainAttributes
-{
-  user_id: string;
-  currentDifficultyTier: string;
-  currentChallengeStatus: string;
-  numberOfRerolls: number;
-
-  declare readonly createdAt: Date;
-  declare readonly updatedAt: Date;
-}
-
-const initializeChallengeMain = (sequelize: Sequelize) => {
-  ChallengeMain.init(
-    {
-      user_id: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true,
-        unique: true,
-      },
-      currentDifficultyTier: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      currentChallengeStatus: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      numberOfRerolls: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-    },
-    {
-      tableName: 'ChallengeMain',
-      sequelize,
-    },
-  );
-};
-
-export { ChallengeMainAttributes, initializeChallengeMain };
 
 export default ChallengeMain;

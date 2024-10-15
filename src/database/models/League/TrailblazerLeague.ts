@@ -1,38 +1,37 @@
-import { DataTypes, Sequelize, Model } from 'sequelize';
-import { LeagueAttributes } from './League';
+import { CreationOptional, DataTypes, Sequelize } from 'sequelize';
+import { InitializableModel } from '../types';
 
-class TrailblazerLeague
-  extends Model<LeagueAttributes>
-  implements LeagueAttributes
-{
+class TrailblazerLeague extends InitializableModel<TrailblazerLeague> {
   declare name: string;
   declare points: number;
 
-  declare readonly createdAt: Date;
-  declare readonly updatedAt: Date;
+  declare readonly createdAt: CreationOptional<Date>;
+  declare readonly updatedAt: CreationOptional<Date>;
+
+  static initialize = (sequelize: Sequelize) => {
+    TrailblazerLeague.init(
+      {
+        name: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          primaryKey: true,
+          unique: true,
+        },
+        points: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+        },
+        createdAt: DataTypes.DATE,
+        updatedAt: DataTypes.DATE,
+      },
+      {
+        tableName: 'TrailblazerLeague',
+        sequelize,
+      },
+    );
+  };
+
+  static initializeAssociations() {}
 }
-
-const initializeTrailblazerLeague = (sequelize: Sequelize) => {
-  TrailblazerLeague.init(
-    {
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true,
-        unique: true,
-      },
-      points: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-    },
-    {
-      tableName: 'TrailblazerLeague',
-      sequelize,
-    },
-  );
-};
-
-export { initializeTrailblazerLeague };
 
 export default TrailblazerLeague;

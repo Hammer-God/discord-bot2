@@ -1,45 +1,27 @@
-import DiscordUser, { initializeDiscordUser } from './DiscordUser';
-import ShatteredRelicsLeague, {
-  initializeShatteredRelicsLeague,
-} from './League/ShatteredRelicsLeague';
-import TrailblazerLeague, {
-  initializeTrailblazerLeague,
-} from './League/TrailblazerLeague';
-import TrailblazerReloadedLeague, {
-  initializeTrailblazerReloadedLeague,
-} from './League/TrailblazerReloadedLeague';
-import TwistedLeague, { initializeTwistedLeague } from './League/TwistedLeague';
-import ChallengeMain, {
-  initializeChallengeMain,
-} from './Challenge/ChallengeMain';
-import NoviceChallengeCard, {
-  initializeNoviceChallengeCard,
-} from './Challenge/NoviceChallenge';
-import IntermediateChallengeCard, {
-  initializeIntermediateChallengeCard,
-} from './Challenge/IntermediateChallenge';
-import ExperiencedChallengeCard, {
-  initializeExperiencedChallengeCard,
-} from './Challenge/ExperiencedChallenge';
-import MasterChallengeCard, {
-  initializeMasterChallengeCard,
-} from './Challenge/MasterChallenge';
-import GrandmasterChallengeCard, {
-  initializeGrandmasterChallengeCard,
-} from './Challenge/GrandmasterChallenge';
+import DiscordUser from './DiscordUser';
+import ShatteredRelicsLeague from './League/ShatteredRelicsLeague';
+import TrailblazerLeague from './League/TrailblazerLeague';
+import TrailblazerReloadedLeague from './League/TrailblazerReloadedLeague';
+import TwistedLeague from './League/TwistedLeague';
+import ChallengeMain from './Challenge/ChallengeMain';
+import NoviceChallengeCard from './Challenge/NoviceChallenge';
+import IntermediateChallengeCard from './Challenge/IntermediateChallenge';
+import ExperiencedChallengeCard from './Challenge/ExperiencedChallenge';
+import MasterChallengeCard from './Challenge/MasterChallenge';
+import GrandmasterChallengeCard from './Challenge/GrandmasterChallenge';
 
-const initializeModels = [
-  initializeDiscordUser,
-  initializeShatteredRelicsLeague,
-  initializeTrailblazerLeague,
-  initializeTrailblazerReloadedLeague,
-  initializeTwistedLeague,
-  initializeChallengeMain,
-  initializeNoviceChallengeCard,
-  initializeIntermediateChallengeCard,
-  initializeExperiencedChallengeCard,
-  initializeMasterChallengeCard,
-  initializeGrandmasterChallengeCard,
+const models = [
+  DiscordUser,
+  ShatteredRelicsLeague,
+  TrailblazerLeague,
+  TrailblazerReloadedLeague,
+  TwistedLeague,
+  ChallengeMain,
+  NoviceChallengeCard,
+  IntermediateChallengeCard,
+  ExperiencedChallengeCard,
+  MasterChallengeCard,
+  GrandmasterChallengeCard,
 ];
 
 export {
@@ -56,4 +38,4 @@ export {
   GrandmasterChallengeCard,
 };
 
-export default initializeModels;
+export default models;

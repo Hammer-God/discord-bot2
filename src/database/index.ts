@@ -12,7 +12,8 @@ export const initializeDatabase = async () => {
     await sequelize.authenticate();
     console.log('Connected to OSRS Leagues database.');
 
-    models.forEach((model) => model(sequelize));
+    Object.values(models).forEach((model) => model.initialize(sequelize));
+    Object.values(models).forEach((model) => model.initializeAssociations());
     if (config.environment !== 'production') {
       await sequelize.sync({
         alter: {

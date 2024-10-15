@@ -5,7 +5,7 @@ import {
   TrailblazerReloadedLeague,
   TwistedLeague,
 } from './database/models';
-import { DiscordUserAttributes } from './database/models/DiscordUser';
+import DiscordUser from './database/models/DiscordUser';
 import { LeagueAttributes } from './database/models/League/League';
 import { Attributes, UpsertOptions } from 'sequelize';
 
@@ -97,7 +97,7 @@ const RankColors: { [key in Rank]: HexColorString } = {
   dragon: '#d81d06',
 };
 
-const LeagueDiscordColumn: { [key in League]: keyof DiscordUserAttributes } = {
+const LeagueDiscordColumn: { [key in League]: keyof DiscordUser } = {
   twisted: 'twisted_name',
   trailblazer: 'trailblazer_name',
   shattered_relics: 'shattered_relics_name',

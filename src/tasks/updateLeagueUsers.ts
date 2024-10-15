@@ -23,7 +23,7 @@ const updateLeagueUsers: Task = {
 
       const updatedUsers: { name: string; points: number }[] = [];
       for (const discordUser of discordUsers) {
-        const leagueUserName = discordUser[leagueNameIdentifier];
+        const leagueUserName = discordUser[leagueNameIdentifier] as string;
         if (leagueUserName?.length > 0) {
           try {
             const hiscoreResult = await fetchHiscoreUser.execute({
