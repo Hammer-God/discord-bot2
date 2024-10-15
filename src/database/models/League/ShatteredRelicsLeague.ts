@@ -1,38 +1,37 @@
-import { DataTypes, Sequelize, Model } from 'sequelize';
-import { LeagueAttributes } from './League';
+import { CreationOptional, DataTypes, Sequelize } from 'sequelize';
+import { InitializableModel } from '../types';
 
-class ShatteredRelicsLeague
-  extends Model<LeagueAttributes>
-  implements LeagueAttributes
-{
+class ShatteredRelicsLeague extends InitializableModel<ShatteredRelicsLeague> {
   declare name: string;
   declare points: number;
 
-  declare readonly createdAt: Date;
-  declare readonly updatedAt: Date;
+  declare readonly createdAt: CreationOptional<Date>;
+  declare readonly updatedAt: CreationOptional<Date>;
+
+  static initialize = (sequelize: Sequelize) => {
+    ShatteredRelicsLeague.init(
+      {
+        name: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          primaryKey: true,
+          unique: true,
+        },
+        points: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+        },
+        createdAt: DataTypes.DATE,
+        updatedAt: DataTypes.DATE,
+      },
+      {
+        tableName: 'ShatteredRelicsLeague',
+        sequelize,
+      },
+    );
+  };
+
+  static initializeAssociations() {}
 }
-
-const initializeShatteredRelicsLeague = (sequelize: Sequelize) => {
-  ShatteredRelicsLeague.init(
-    {
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true,
-        unique: true,
-      },
-      points: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-    },
-    {
-      tableName: 'ShatteredRelicsLeague',
-      sequelize,
-    },
-  );
-};
-
-export { initializeShatteredRelicsLeague };
 
 export default ShatteredRelicsLeague;

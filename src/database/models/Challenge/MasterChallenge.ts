@@ -1,58 +1,57 @@
-import { DataTypes, Sequelize, Model } from 'sequelize';
-import { ChallengeCardBase } from './ChallengeCard';
+import { DataTypes, Sequelize, Model, CreationOptional } from 'sequelize';
+import { InitializableModel } from '../types';
 
-class MasterChallengeCard
-  extends Model<ChallengeCardBase>
-  implements ChallengeCardBase
-{
-  user_id: string;
-  challengeOne: string;
-  challengeTwo: string;
-  challengeThree: string;
-  challengeFour: string;
-  rerolled: number;
+class MasterChallengeCard extends InitializableModel<MasterChallengeCard> {
+  declare user_id: string;
+  declare challengeOne: string;
+  declare challengeTwo: string;
+  declare challengeThree: string;
+  declare challengeFour: string;
+  declare rerolled: number;
 
-  declare readonly createdAt: Date;
-  declare readonly updatedAt: Date;
+  declare readonly createdAt: CreationOptional<Date>;
+  declare readonly updatedAt: CreationOptional<Date>;
+
+  static initialize = (sequelize: Sequelize) => {
+    MasterChallengeCard.init(
+      {
+        user_id: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          primaryKey: true,
+          unique: true,
+        },
+        challengeOne: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        challengeTwo: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        challengeThree: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        challengeFour: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        rerolled: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+        },
+        createdAt: DataTypes.DATE,
+        updatedAt: DataTypes.DATE,
+      },
+      {
+        tableName: 'MasterChallengeCard',
+        sequelize,
+      },
+    );
+  };
+
+  static initializeAssociations() {}
 }
-
-const initializeMasterChallengeCard = (sequelize: Sequelize) => {
-  MasterChallengeCard.init(
-    {
-      user_id: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true,
-        unique: true,
-      },
-      challengeOne: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      challengeTwo: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      challengeThree: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      challengeFour: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      rerolled: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-    },
-    {
-      tableName: 'MasterChallengeCard',
-      sequelize,
-    },
-  );
-};
-
-export { initializeMasterChallengeCard };
 
 export default MasterChallengeCard;
