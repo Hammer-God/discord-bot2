@@ -6,7 +6,7 @@ import {
   MasterChallengeCard,
   GrandmasterChallengeCard,
 } from '../src/database/models';
-import { ChallengeCardBase } from '../src/database/models/Challenge/ChallengeCard';
+import { ChallengeCardBase } from '../src/database/models/Challenge/ChallengeCardBase';
 import * as challengesData from '../src/challengeList/challenges.json';
 
 /**
