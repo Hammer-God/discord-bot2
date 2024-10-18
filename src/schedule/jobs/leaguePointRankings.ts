@@ -4,7 +4,7 @@ import { Job } from '../types';
 const leaguePointRankingsJob: Job = {
   enabled: false,
   interval: {
-    testing: undefined,
+    test: undefined,
     development: undefined, //'* * * * *',
     stage: '0 0 * * *',
     production: '0 */1 * * *',

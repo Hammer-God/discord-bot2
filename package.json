@@ -6,13 +6,18 @@
   "scripts": {
     "build": "tsc",
     "commands": "ts-node ./src/deploy-commands.ts",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:reset": "npx sequelize-cli db:migrate:undo:all",
     "lint": "eslint src --ext .ts & prettier src --check",
     "lint:fix": "eslint src --ext .ts --fix & prettier src --write",
+    "seed": "npx sequelize-cli db:seed:all",
+    "seed:reset": "npx sequelize-cli db:seed:undo:all",
     "start": "ts-node ./src/index.ts",
     "start:watch": "nodemon -r ./src/index.ts",
     "start:node": "node ./dist/index.js",
     "release": "changeset tag",
-    "test": "jest",
+    "pretest": "rm -f ./.sqlite/test.db && cross-env NODE_ENV=test yarn migrate && cross-env NODE_ENV=test yarn seed",
+    "test": "cross-env NODE_ENV=test DOTENV_CONFIG_PATH=.env.test yarn jest --passWithNoTests",
     "prepare": "husky install"
   },
   "repository": {
@@ -27,6 +32,7 @@
   "homepage": "https://github.com/osrs-leagues/discord-bot#readme",
   "devDependencies": {
     "@types/jest": "^27.0.3",
+    "cross-env": "^7.0.3",
     "eslint": "^8.5.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -35,7 +41,7 @@
     "lint-staged": "^14.0.1",
     "nodemon": "^3.0.1",
     "prettier": "^2.5.1",
-    "sqlite3": "^5.1.6",
+    "sqlite3": "^5.1.7",
     "ts-jest": "^27.1.2"
   },
   "lint-staged": {
@@ -61,7 +67,7 @@
     "mysql2": "^3.6.1",
     "node-cron": "^3.0.2",
     "puppeteer": "^23.5.1",
-    "sequelize": "^6.33.0",
+    "sequelize": "^6.37.4",
     "ts-node": "^10.9.1",
     "typescript": "^4.5.4"
   },

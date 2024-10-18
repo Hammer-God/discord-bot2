@@ -4,7 +4,7 @@ import { Job } from '../types';
 const updateRolesJob: Job = {
   enabled: true,
   interval: {
-    testing: undefined,
+    test: undefined,
     development: undefined, //'* * * * *',
     stage: undefined, // '* * *',
     production: '2 */1 * * *',

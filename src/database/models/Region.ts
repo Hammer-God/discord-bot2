@@ -15,7 +15,6 @@ class Region extends InitializableModel<Region> {
         name: {
           type: DataTypes.STRING,
           allowNull: false,
-          primaryKey: true,
           unique: true,
         },
         discordRoleId: {
@@ -23,7 +22,7 @@ class Region extends InitializableModel<Region> {
         },
         /** Auto-generated */
         id: {
-          type: DataTypes.BIGINT.UNSIGNED,
+          type: DataTypes.BIGINT,
           allowNull: false,
           autoIncrement: true,
           primaryKey: true,

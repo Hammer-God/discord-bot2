@@ -3,7 +3,7 @@ import { League, Rank } from './leagues';
 
 dotenv.config();
 
-export type Environment = 'testing' | 'development' | 'stage' | 'production';
+export type Environment = 'test' | 'development' | 'stage' | 'production';
 
 export type BotConfig = {
   discord_bot: {

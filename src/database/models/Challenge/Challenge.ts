@@ -82,7 +82,7 @@ class Challenge extends InitializableModel<Challenge> {
         },
         /** Auto-generated */
         id: {
-          type: DataTypes.BIGINT.UNSIGNED,
+          type: DataTypes.BIGINT,
           allowNull: false,
           autoIncrement: true,
           primaryKey: true,

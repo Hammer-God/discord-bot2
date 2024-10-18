@@ -9,8 +9,13 @@ import IntermediateChallengeCard from './Challenge/IntermediateChallenge';
 import ExperiencedChallengeCard from './Challenge/ExperiencedChallenge';
 import MasterChallengeCard from './Challenge/MasterChallenge';
 import GrandmasterChallengeCard from './Challenge/GrandmasterChallenge';
+import Challenge from './Challenge/Challenge';
+import ChallengeCard from './Challenge/ChallengeCard';
+import Region from './Region';
 
 const models = [
+  Challenge,
+  ChallengeCard,
   DiscordUser,
   ShatteredRelicsLeague,
   TrailblazerLeague,
@@ -22,9 +27,12 @@ const models = [
   ExperiencedChallengeCard,
   MasterChallengeCard,
   GrandmasterChallengeCard,
+  Region,
 ];
 
 export {
+  Challenge,
+  ChallengeCard,
   DiscordUser,
   ShatteredRelicsLeague,
   TrailblazerLeague,
@@ -36,6 +44,7 @@ export {
   ExperiencedChallengeCard,
   MasterChallengeCard,
   GrandmasterChallengeCard,
+  Region,
 };
 
 export default models;

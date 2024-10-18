@@ -1,33 +1,12 @@
-import { CreationOptional, DataTypes, ForeignKey, Sequelize } from 'sequelize';
-import { InitializableModel } from '../types';
-import DiscordUser from '../DiscordUser';
-import Challenge, { ChallengeDifficulity } from './Challenge';
+import { DataTypes, QueryInterface } from 'sequelize';
 
-export type ChallengeCardStatus = 'assigned' | 'review' | 'completed';
+import { ChallengeCard } from '../models';
+import { ChallengeCardStatus } from '../models/Challenge/ChallengeCard';
 
-class ChallengeCard extends InitializableModel<ChallengeCard> {
-  declare difficulty: ChallengeDifficulity;
-  declare proof: string;
-  declare status: ChallengeCardStatus;
-  declare rerollCount: number;
-
-  declare readonly challengeOneId: ForeignKey<Challenge['id']>;
-  declare readonly challengeTwoId: ForeignKey<Challenge['id']>;
-  declare readonly challengeThreeId: ForeignKey<Challenge['id']>;
-  declare readonly challengeFourId?: CreationOptional<
-    ForeignKey<Challenge['id']>
-  >;
-  declare readonly challengeFiveId?: CreationOptional<
-    ForeignKey<Challenge['id']>
-  >;
-  declare readonly createdAt: CreationOptional<Date>;
-  declare readonly discordUserId: ForeignKey<DiscordUser['user_id']>;
-  declare readonly id: CreationOptional<number>;
-  declare readonly updatedAt: CreationOptional<Date>;
-
-  static initialize = (sequelize: Sequelize) => {
-    ChallengeCard.init(
-      {
+module.exports = {
+  async up(queryInterface: QueryInterface) {
+    await queryInterface
+      .createTable<ChallengeCard>('ChallengeCard', {
         challengeOneId: {
           type: DataTypes.BIGINT,
           allowNull: false,
@@ -104,32 +83,16 @@ class ChallengeCard extends InitializableModel<ChallengeCard> {
         },
         createdAt: DataTypes.DATE,
         updatedAt: DataTypes.DATE,
-      },
-      {
-        tableName: 'ChallengeCard',
-        sequelize,
-        indexes: [
-          {
-            unique: true,
-            fields: ['discordUserId', 'difficulty'],
-          },
-        ],
-      },
-    );
-  };
-
-  static initializeAssociations() {
-    ChallengeCard.belongsTo(DiscordUser, {
-      foreignKey: {
-        allowNull: false,
-      },
-    });
-    ChallengeCard.hasMany(Challenge, {
-      foreignKey: {
-        allowNull: false,
-      },
-    });
-  }
-}
-
-export default ChallengeCard;
+      })
+      .then(async () => {
+        await queryInterface.addIndex(
+          'ChallengeCard',
+          ['discordUserId', 'difficulty'],
+          { unique: true },
+        );
+      });
+  },
+  async down(queryInterface: QueryInterface) {
+    await queryInterface.dropTable('ChallengeCard');
+  },
+};

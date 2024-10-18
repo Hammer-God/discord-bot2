@@ -18,7 +18,7 @@ const sqliteConfig: Options = {
 };
 
 const databaseConfig: Options =
-  config.environment === 'development' || config.environment === 'testing'
+  config.environment === 'development' || config.environment === 'test'
     ? sqliteConfig
     : mysqlConfig;
 
