@@ -1,46 +1,35 @@
-import { CreationOptional, DataTypes } from 'sequelize';
+import { CreationOptional, DataTypes, ForeignKey } from 'sequelize';
 import { InitializableModel } from '../types';
+import Region from '../Region';
 
-export type ChallengeDifficulity =
-  | 'novice'
-  | 'intermediate'
-  | 'experienced'
-  | 'master'
-  | 'grandmaster';
-
-export type ChallengeRegion =
-  | 'asgarnia'
-  | 'desert'
-  | 'kandarin'
-  | 'kourend'
-  | 'misthalin'
-  | 'morytania'
-  | 'fremennik'
-  | 'desert'
-  | 'tirannwn'
-  | 'varlamore'
-  | 'wilderness';
+export enum ChallengeDifficulty {
+  NOVICE = 'novice',
+  INTERMEDIATE = 'intermediate',
+  EXPERIENCED = 'experienced',
+  MASTER = 'master',
+  GRANDMASTER = 'grandmaster',
+}
 
 class Challenge extends InitializableModel<Challenge> {
-  declare difficulty: ChallengeDifficulity;
+  declare difficulty: ChallengeDifficulty;
   declare description: string;
-  declare region_one: ChallengeRegion;
-  declare region_two: ChallengeRegion;
 
   declare readonly createdAt: CreationOptional<Date>;
   declare readonly id: CreationOptional<number>;
+  declare readonly regionOneId: ForeignKey<Region['id']>;
+  declare readonly regionTwoId?: CreationOptional<ForeignKey<Region['id']>>;
   declare readonly updatedAt: CreationOptional<Date>;
 
   static initialize = (sequelize: any) => {
     Challenge.init(
       {
         difficulty: {
-          type: DataTypes.ENUM<ChallengeDifficulity>(
-            'novice',
-            'intermediate',
-            'experienced',
-            'master',
-            'grandmaster',
+          type: DataTypes.ENUM<ChallengeDifficulty>(
+            ChallengeDifficulty.NOVICE,
+            ChallengeDifficulty.INTERMEDIATE,
+            ChallengeDifficulty.EXPERIENCED,
+            ChallengeDifficulty.MASTER,
+            ChallengeDifficulty.GRANDMASTER,
           ),
           allowNull: false,
         },
@@ -48,37 +37,21 @@ class Challenge extends InitializableModel<Challenge> {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        region_one: {
-          type: DataTypes.ENUM<ChallengeRegion>(
-            'asgarnia',
-            'desert',
-            'kandarin',
-            'kourend',
-            'misthalin',
-            'morytania',
-            'fremennik',
-            'desert',
-            'tirannwn',
-            'varlamore',
-            'wilderness',
-          ),
+        regionOneId: {
+          type: DataTypes.BIGINT,
           allowNull: false,
+          references: {
+            model: 'Region',
+            key: 'id',
+          },
         },
-        region_two: {
-          type: DataTypes.ENUM<ChallengeRegion>(
-            'asgarnia',
-            'desert',
-            'kandarin',
-            'kourend',
-            'misthalin',
-            'morytania',
-            'fremennik',
-            'desert',
-            'tirannwn',
-            'varlamore',
-            'wilderness',
-          ),
-          allowNull: false,
+        regionTwoId: {
+          type: DataTypes.BIGINT,
+          allowNull: true,
+          references: {
+            model: 'Region',
+            key: 'id',
+          },
         },
         /** Auto-generated */
         id: {
@@ -98,6 +71,15 @@ class Challenge extends InitializableModel<Challenge> {
     );
   };
 
-  static initializeAssociations() {}
+  static initializeAssociations() {
+    Challenge.hasOne(Region, {
+      foreignKey: 'regionOneId',
+      as: 'regionOne',
+    });
+    Challenge.hasOne(Region, {
+      foreignKey: 'regionTwoId',
+      as: 'regionTwo',
+    });
+  }
 }
 export default Challenge;

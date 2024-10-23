@@ -1,12 +1,16 @@
 import { CreationOptional, DataTypes, ForeignKey, Sequelize } from 'sequelize';
 import { InitializableModel } from '../types';
 import DiscordUser from '../DiscordUser';
-import Challenge, { ChallengeDifficulity } from './Challenge';
+import Challenge, { ChallengeDifficulty } from './Challenge';
 
-export type ChallengeCardStatus = 'assigned' | 'review' | 'completed';
+export enum ChallengeCardStatus {
+  STARTED = 'started',
+  APPROVAL = 'approval',
+  COMPLETED = 'completed',
+}
 
 class ChallengeCard extends InitializableModel<ChallengeCard> {
-  declare difficulty: ChallengeDifficulity;
+  declare difficulty: ChallengeDifficulty;
   declare proof: string;
   declare status: ChallengeCardStatus;
   declare rerollCount: number;
@@ -84,9 +88,9 @@ class ChallengeCard extends InitializableModel<ChallengeCard> {
         status: {
           defaultValue: 'assigned',
           type: DataTypes.ENUM<ChallengeCardStatus>(
-            'assigned',
-            'review',
-            'completed',
+            ChallengeCardStatus.STARTED,
+            ChallengeCardStatus.APPROVAL,
+            ChallengeCardStatus.COMPLETED,
           ),
           allowNull: false,
         },

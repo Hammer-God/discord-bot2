@@ -2,7 +2,11 @@ import { SlashCommandBuilder } from '@discordjs/builders';
 import { GuildMember, MessageActionRow, MessageButton } from 'discord.js';
 import { Command } from './types';
 import { channelGroups } from '../../Channel';
-import { ChallengeMain } from '../../../database/models';
+import {
+  ChallengeCard,
+  ChallengeCardStatus,
+  ChallengeDifficulty,
+} from '../../../database/models';
 import * as challenges from '../../../challenges';
 import getChallengeCardMessage from '../../messages/challenge';
 
@@ -22,20 +26,22 @@ const challengeCommand: Command = {
 
       // Fetch user's challenge main record
       let challengeMain = await challenges.loadChallengeMain(userId);
-      let currentDifficultyTier = 'Novice';
-      let currentChallengeStatus = 'Started';
+      let currentDifficultyTier: ChallengeDifficulty =
+        ChallengeDifficulty.NOVICE;
+      let currentChallengeStatus: ChallengeCardStatus =
+        ChallengeCardStatus.STARTED;
       let challengeList: string[] = [];
       let numberOfRerolls = 0;
 
       if (challengeMain) {
-        currentDifficultyTier = challengeMain.currentDifficultyTier;
-        currentChallengeStatus = challengeMain.currentChallengeStatus;
-        numberOfRerolls = challengeMain.numberOfRerolls;
+        currentDifficultyTier = challengeMain.difficulty;
+        currentChallengeStatus = challengeMain.status;
+        numberOfRerolls = challengeMain.rerollCount;
 
         // Check if user has completed Grandmaster
         if (
-          currentDifficultyTier === 'Grandmaster' &&
-          currentChallengeStatus === 'Completed'
+          currentDifficultyTier === ChallengeDifficulty.GRANDMASTER &&
+          currentChallengeStatus === ChallengeCardStatus.COMPLETED
         ) {
           await interaction.reply({
             content:
@@ -45,28 +51,28 @@ const challengeCommand: Command = {
           return;
         }
         if (
-          currentChallengeStatus === 'Started' ||
-          currentChallengeStatus === 'Approval'
+          currentChallengeStatus === ChallengeCardStatus.STARTED ||
+          currentChallengeStatus === ChallengeCardStatus.APPROVAL
         ) {
           // Load existing challenges
           const existingChallenges = await challenges.loadChallengeCard(
             userId,
             currentDifficultyTier,
           );
-          rerolled = existingChallenges.rerolled;
+          rerolled = existingChallenges.rerollCount;
           if (existingChallenges) {
             challengeList = challenges.existingChallengesToList(
               existingChallenges,
               currentDifficultyTier,
             );
           }
-        } else if (currentChallengeStatus === 'Completed') {
+        } else if (currentChallengeStatus === ChallengeCardStatus.COMPLETED) {
           // Promote to next tier
           const nextTier = challenges.getNextDifficultyTier(
             currentDifficultyTier,
           );
           currentDifficultyTier = nextTier;
-          currentChallengeStatus = 'Started';
+          currentChallengeStatus = ChallengeCardStatus.STARTED;
 
           // Region role requirement check based on difficulty
           const regionRoleCount = challenges.getRegionRoleCount(userRoles);
@@ -98,15 +104,16 @@ const challengeCommand: Command = {
 
           // Update ChallengeMain with new tier and status
           await challenges.updateChallengeMain(userId, {
-            currentDifficultyTier,
-            currentChallengeStatus,
+            difficulty: currentDifficultyTier,
+            status: currentChallengeStatus,
           });
         }
       } else {
         // Region role requirement check based on difficulty
         const regionRoleCount = challenges.getRegionRoleCount(userRoles);
-        const requiredRegionRoles =
-          challenges.getChallengeCardEligibility('Novice');
+        const requiredRegionRoles = challenges.getChallengeCardEligibility(
+          ChallengeDifficulty.NOVICE,
+        );
 
         if (regionRoleCount < requiredRegionRoles) {
           await interaction.reply({
@@ -116,20 +123,23 @@ const challengeCommand: Command = {
           return;
         }
         // New user: Create Novice challenges and ChallengeMain entry
-        challengeList = challenges.generateNewChallenges('Novice', userRoles);
+        challengeList = challenges.generateNewChallenges(
+          ChallengeDifficulty.NOVICE,
+          userRoles,
+        );
 
         // Create ChallengeMain entry
-        challengeMain = await ChallengeMain.create({
-          user_id: userId,
-          currentDifficultyTier: 'Novice',
-          currentChallengeStatus: 'Started',
-          numberOfRerolls: 2,
+        challengeMain = await ChallengeCard.create({
+          discordUserId: userId,
+          difficulty: ChallengeDifficulty.NOVICE,
+          status: ChallengeCardStatus.STARTED,
+          rerollCount: 2,
         });
 
         // Save Novice challenges
         await challenges.saveChallengeCard(
           userId,
-          'Novice',
+          ChallengeDifficulty.NOVICE,
           challengeList,
           rerolled,
         );
@@ -143,10 +153,10 @@ const challengeCommand: Command = {
       });
 
       // Add "Reroll" button if rerolls are available and not already rerolled
-      if (challengeMain.numberOfRerolls > 0 && !rerolled) {
+      if (challengeMain.rerollCount > 0 && !rerolled) {
         const rerollButton = new MessageButton()
           .setCustomId(`reroll ${userId} ${currentDifficultyTier}`)
-          .setLabel(`Reroll (${challengeMain.numberOfRerolls} remaining)`)
+          .setLabel(`Reroll (${challengeMain.rerollCount} remaining)`)
           .setStyle('PRIMARY');
         const row = new MessageActionRow().addComponents(rerollButton);
 

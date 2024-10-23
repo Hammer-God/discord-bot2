@@ -61,11 +61,11 @@ module.exports = {
           type: DataTypes.STRING,
         },
         status: {
-          defaultValue: 'assigned',
+          defaultValue: 'started',
           type: DataTypes.ENUM<ChallengeCardStatus>(
-            'assigned',
-            'review',
-            'completed',
+            ChallengeCardStatus.STARTED,
+            ChallengeCardStatus.APPROVAL,
+            ChallengeCardStatus.COMPLETED,
           ),
           allowNull: false,
         },

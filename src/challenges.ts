@@ -1,12 +1,8 @@
 import {
-  ChallengeMain,
-  NoviceChallengeCard,
-  IntermediateChallengeCard,
-  ExperiencedChallengeCard,
-  MasterChallengeCard,
-  GrandmasterChallengeCard,
+  Challenge,
+  ChallengeCard,
+  ChallengeDifficulty,
 } from '../src/database/models';
-import { ChallengeCardBase } from '../src/database/models/Challenge/ChallengeCardBase';
 import * as challengesData from '../src/challengeList/challenges.json';
 
 /**
@@ -34,38 +30,14 @@ export function getRegionRoleCount(userRoles: string[]): number {
  * @param difficulty - The difficulty tier.
  * @returns - The number of roles required.
  */
-export function getChallengeCardEligibility(difficulty: string): number {
-  return difficulty === 'Novice' ? 1 : difficulty === 'Intermediate' ? 2 : 3; // Experienced, Master, and Grandmaster require 3
-}
-
-/**
- * Retrieves the appropriate ChallengeCard model based on difficulty.
- * @param difficulty - The difficulty tier.
- * @returns The corresponding ChallengeCard model or null if invalid.
- */
-export function getChallengeCardModel(
-  difficulty: string,
-):
-  | typeof NoviceChallengeCard
-  | typeof IntermediateChallengeCard
-  | typeof ExperiencedChallengeCard
-  | typeof MasterChallengeCard
-  | typeof GrandmasterChallengeCard
-  | null {
-  switch (difficulty) {
-    case 'Novice':
-      return NoviceChallengeCard;
-    case 'Intermediate':
-      return IntermediateChallengeCard;
-    case 'Experienced':
-      return ExperiencedChallengeCard;
-    case 'Master':
-      return MasterChallengeCard;
-    case 'Grandmaster':
-      return GrandmasterChallengeCard;
-    default:
-      return null;
-  }
+export function getChallengeCardEligibility(
+  difficulty: ChallengeDifficulty,
+): number {
+  return difficulty === ChallengeDifficulty.NOVICE
+    ? 1
+    : difficulty === ChallengeDifficulty.INTERMEDIATE
+    ? 2
+    : 3; // Experienced, Master, and Grandmaster require 3
 }
 
 /**
@@ -75,8 +47,8 @@ export function getChallengeCardModel(
  */
 export async function loadChallengeMain(
   userId: string,
-): Promise<ChallengeMain | null> {
-  return await ChallengeMain.findOne({ where: { user_id: userId } });
+): Promise<ChallengeCard | null> {
+  return await ChallengeCard.findOne({ where: { discordUserId: userId } });
 }
 
 /**
@@ -86,13 +58,13 @@ export async function loadChallengeMain(
  */
 export async function updateChallengeMain(
   userId: string,
-  updateData: Partial<ChallengeMain>,
+  updateData: Partial<ChallengeCard>,
 ): Promise<void> {
   const challengeMain = await loadChallengeMain(userId);
   if (challengeMain) {
     await challengeMain.update(updateData);
   } else {
-    throw new Error(`ChallengeMain record not found for user ID: ${userId}`);
+    throw new Error(`ChallengeCard record not found for user ID: ${userId}`);
   }
 }
 
@@ -105,14 +77,10 @@ export async function updateChallengeMain(
 export async function loadChallengeCard(
   userId: string,
   difficulty: string,
-): Promise<ChallengeCardBase | null> {
-  const ChallengeCardModel = getChallengeCardModel(difficulty);
-  if (!ChallengeCardModel) {
-    throw new Error(`Invalid difficulty tier: ${difficulty}`);
-  }
-  return (await ChallengeCardModel.findOne({
-    where: { user_id: userId },
-  })) as ChallengeCardBase | null;
+): Promise<ChallengeCard | null> {
+  return await ChallengeCard.findOne({
+    where: { discordUserId: userId, difficulty: difficulty },
+  });
 }
 
 /**
@@ -123,48 +91,56 @@ export async function loadChallengeCard(
  */
 export async function saveChallengeCard(
   userId: string,
-  difficulty: string,
-  challenges: string[],
+  difficulty: ChallengeDifficulty,
+  challenges: Challenge[],
   rerolled: number,
 ): Promise<void> {
-  const ChallengeCardModel = getChallengeCardModel(difficulty);
-  if (!ChallengeCardModel) {
-    throw new Error(`Invalid difficulty tier: ${difficulty}`);
-  }
+  let challengeOne = challenges[0];
+  let challengeTwo = challenges[1];
+  let challengeThree = challenges[2];
+  let challengeFour = undefined;
+  let challengeFive = undefined;
 
-  const challengeData: any = {
-    user_id: userId,
-    challengeOne: challenges[0],
-    challengeTwo: challenges[1],
-    challengeThree: challenges[2],
-    rerolled: rerolled,
-  };
-
-  if (difficulty === 'Experienced' || difficulty === 'Master') {
-    challengeData.challengeFour = challenges[3];
-  } else if (difficulty === 'Grandmaster') {
-    challengeData.challengeFour = challenges[3];
-    challengeData.challengeFive = challenges[4];
+  if (
+    difficulty === ChallengeDifficulty.EXPERIENCED ||
+    difficulty === ChallengeDifficulty.MASTER
+  ) {
+    challengeFour = challenges[3];
+  } else if (difficulty === ChallengeDifficulty.GRANDMASTER) {
+    challengeFour = challenges[3];
+    challengeFive = challenges[4];
   }
 
   // Upsert the challenge card (create or update)
-  await ChallengeCardModel.upsert(challengeData);
+  await ChallengeCard.upsert({
+    discordUserId: userId,
+    difficulty: difficulty,
+    challengeOneId: challengeOne.id,
+    challengeTwoId: challengeTwo.id,
+    challengeThreeId: challengeThree.id,
+    challengeFourId: challengeFour?.id,
+    challengeFiveId: challengeFive?.id,
+    rerollCount: rerolled,
+  });
 }
 
 export function existingChallengesToList(
-  existingChallenges: ChallengeCardBase,
-  difficulty: string,
-): string[] {
-  const challengeList: string[] = [];
-  challengeList[0] = existingChallenges.challengeOne;
-  challengeList[1] = existingChallenges.challengeTwo;
-  challengeList[2] = existingChallenges.challengeThree;
+  existingChallenges: ChallengeCard,
+  difficulty: ChallengeDifficulty,
+): number[] {
+  const challengeList: number[] = [];
+  challengeList[0] = existingChallenges.challengeOneId;
+  challengeList[1] = existingChallenges.challengeTwoId;
+  challengeList[2] = existingChallenges.challengeThreeId;
 
-  if (difficulty === 'Experienced' || difficulty === 'Master') {
-    challengeList[3] = existingChallenges.challengeFour;
-  } else if (difficulty === 'Grandmaster') {
-    challengeList[3] = existingChallenges.challengeFour;
-    challengeList[4] = existingChallenges.challengeFive;
+  if (
+    difficulty === ChallengeDifficulty.EXPERIENCED ||
+    difficulty === ChallengeDifficulty.MASTER
+  ) {
+    challengeList[3] = existingChallenges.challengeFourId;
+  } else if (difficulty === ChallengeDifficulty.GRANDMASTER) {
+    challengeList[3] = existingChallenges.challengeFourId;
+    challengeList[4] = existingChallenges.challengeFiveId;
   }
   return challengeList;
 }
@@ -174,18 +150,14 @@ export function existingChallengesToList(
  * @param currentTier - The current difficulty tier.
  * @returns The next difficulty tier.
  */
-export function getNextDifficultyTier(currentTier: string): string {
-  const tiers = [
-    'Novice',
-    'Intermediate',
-    'Experienced',
-    'Master',
-    'Grandmaster',
-  ];
+export function getNextDifficultyTier(
+  currentTier: ChallengeDifficulty,
+): ChallengeDifficulty {
+  const tiers = Object.values(ChallengeDifficulty);
   const currentIndex = tiers.indexOf(currentTier);
   return currentIndex < tiers.length - 1
     ? tiers[currentIndex + 1]
-    : 'Grandmaster';
+    : ChallengeDifficulty.GRANDMASTER;
 }
 
 /**
@@ -195,7 +167,7 @@ export function getNextDifficultyTier(currentTier: string): string {
  * @returns An array of newly generated challenge descriptions.
  */
 export function generateNewChallenges(
-  difficulty: string,
+  difficulty: ChallengeDifficulty,
   userRoles: string[],
 ): string[] {
   const allChallenges = getEligibleChallenges(difficulty, userRoles);
@@ -209,7 +181,7 @@ export function generateNewChallenges(
  * @returns An array of eligible challenge descriptions.
  */
 function getEligibleChallenges(
-  difficulty: string,
+  difficulty: ChallengeDifficulty,
   userRoles: string[],
 ): string[] {
   return challengesData.challenges
@@ -253,15 +225,15 @@ function getRandomChallenges(challenges: string[], count: number): string[] {
  * @param difficulty - The difficulty tier.
  * @returns The number of challenges.
  */
-export function getChallengeCount(difficulty: string): number {
+export function getChallengeCount(difficulty: ChallengeDifficulty): number {
   switch (difficulty) {
-    case 'Novice':
-    case 'Intermediate':
+    case ChallengeDifficulty.NOVICE:
+    case ChallengeDifficulty.INTERMEDIATE:
       return 3;
-    case 'Experienced':
-    case 'Master':
+    case ChallengeDifficulty.EXPERIENCED:
+    case ChallengeDifficulty.MASTER:
       return 4;
-    case 'Grandmaster':
+    case ChallengeDifficulty.GRANDMASTER:
       return 5;
     default:
       return 3;

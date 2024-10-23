@@ -1,21 +1,18 @@
 import { DataTypes, QueryInterface } from 'sequelize';
 
 import { Challenge } from '../models';
-import {
-  ChallengeDifficulity,
-  ChallengeRegion,
-} from '../models/Challenge/Challenge';
+import { ChallengeDifficulty } from '../models/Challenge/Challenge';
 
 module.exports = {
   async up(queryInterface: QueryInterface) {
     await queryInterface.createTable<Challenge>('Challenge', {
       difficulty: {
-        type: DataTypes.ENUM<ChallengeDifficulity>(
-          'novice',
-          'intermediate',
-          'experienced',
-          'master',
-          'grandmaster',
+        type: DataTypes.ENUM<ChallengeDifficulty>(
+          ChallengeDifficulty.NOVICE,
+          ChallengeDifficulty.INTERMEDIATE,
+          ChallengeDifficulty.EXPERIENCED,
+          ChallengeDifficulty.MASTER,
+          ChallengeDifficulty.GRANDMASTER,
         ),
         allowNull: false,
       },
@@ -23,37 +20,21 @@ module.exports = {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      region_one: {
-        type: DataTypes.ENUM<ChallengeRegion>(
-          'asgarnia',
-          'desert',
-          'kandarin',
-          'kourend',
-          'misthalin',
-          'morytania',
-          'fremennik',
-          'desert',
-          'tirannwn',
-          'varlamore',
-          'wilderness',
-        ),
+      regionOneId: {
+        type: DataTypes.BIGINT,
         allowNull: false,
+        references: {
+          model: 'Region',
+          key: 'id',
+        },
       },
-      region_two: {
-        type: DataTypes.ENUM<ChallengeRegion>(
-          'asgarnia',
-          'desert',
-          'kandarin',
-          'kourend',
-          'misthalin',
-          'morytania',
-          'fremennik',
-          'desert',
-          'tirannwn',
-          'varlamore',
-          'wilderness',
-        ),
-        allowNull: false,
+      regionTwoId: {
+        type: DataTypes.BIGINT,
+        allowNull: true,
+        references: {
+          model: 'Region',
+          key: 'id',
+        },
       },
       /** Auto-generated */
       id: {

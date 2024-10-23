@@ -1,6 +1,7 @@
 import { ButtonInteraction, Message, GuildMember } from 'discord.js';
 import * as challenges from '../../../challenges';
 import { Button } from './types';
+import { ChallengeCardStatus } from '../../../database';
 
 const challengeApprovalButton: Button = {
   buttons: ['approve', 'reject'],
@@ -21,7 +22,7 @@ const challengeApprovalButton: Button = {
         const challengeMain = await challenges.loadChallengeMain(userId);
         if (challengeMain) {
           await challenges.updateChallengeMain(userId, {
-            currentChallengeStatus: 'Completed',
+            status: ChallengeCardStatus.COMPLETED,
           });
 
           // Send a DM to the user
@@ -50,7 +51,7 @@ const challengeApprovalButton: Button = {
         const challengeMain = await challenges.loadChallengeMain(userId);
         if (challengeMain) {
           await challenges.updateChallengeMain(userId, {
-            currentChallengeStatus: 'Started',
+            status: ChallengeCardStatus.STARTED,
           });
           // Standard rejection reason
           const standardReason =
