@@ -35,6 +35,9 @@ module.exports = {
         {
           name: 'Wilderness',
         },
+        {
+          name: 'General',
+        },
       ],
       {},
     );

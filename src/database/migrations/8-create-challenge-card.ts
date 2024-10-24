@@ -46,7 +46,7 @@ module.exports = {
           },
         },
         difficulty: {
-          type: DataTypes.STRING,
+          type: DataTypes.NUMBER,
           allowNull: false,
         },
         discordUserId: {
@@ -69,7 +69,7 @@ module.exports = {
           ),
           allowNull: false,
         },
-        rerollCount: {
+        rerollsRemaining: {
           type: DataTypes.INTEGER,
           allowNull: false,
         },

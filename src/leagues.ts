@@ -147,6 +147,7 @@ export const insertLeagueName = async (
   league: League,
   username: string,
   points: number,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   options?: UpsertOptions<Attributes<any>>,
 ) => {
   switch (league) {

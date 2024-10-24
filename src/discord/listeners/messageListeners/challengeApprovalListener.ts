@@ -3,6 +3,7 @@ import * as challenges from '../../../challenges';
 import { ChannelListener } from '../types';
 import { setMessageExpiration } from '../utils';
 import getChallengeCardMessage from '../../messages/challenge';
+import { ChallengeCardStatus, ChallengeDifficulty } from '../../../database';
 
 /**
  * Set error message to expire after 1 minute.
@@ -32,9 +33,9 @@ const challengeApprovalMessageListener: ChannelListener = {
     try {
       const challengeMain = await challenges.loadChallengeMain(userId);
       if (challengeMain) {
-        const currentDifficultyTier = challengeMain.currentDifficultyTier;
-        let currentChallengeStatus = challengeMain.currentChallengeStatus;
-        if (currentChallengeStatus === 'Started') {
+        const currentDifficultyTier = challengeMain.difficulty;
+        let currentChallengeStatus = challengeMain.status;
+        if (currentChallengeStatus === ChallengeCardStatus.STARTED) {
           const existingChallenges = await challenges.loadChallengeCard(
             userId,
             currentDifficultyTier,
@@ -65,24 +66,24 @@ const challengeApprovalMessageListener: ChannelListener = {
               rejectButton,
             );
 
-            currentChallengeStatus = 'Approval';
+            currentChallengeStatus = ChallengeCardStatus.APPROVAL;
             await challenges.updateChallengeMain(userId, {
-              currentChallengeStatus: currentChallengeStatus,
+              status: currentChallengeStatus,
             });
             await message.channel.send({
               embeds: [challengeEmbed],
               components: [row],
             });
           }
-        } else if (currentChallengeStatus === 'Approval') {
+        } else if (currentChallengeStatus === ChallengeCardStatus.APPROVAL) {
           const response = await message.reply(
             'Your Challenge Card is already awaiting approval. Please wait for a decision.',
           );
           setMessageExpiration(message, 100);
           setMessageExpiration(response, ERROR_LIFESPAN);
           return;
-        } else if (currentChallengeStatus === 'Completed') {
-          if (currentDifficultyTier !== 'Grandmaster') {
+        } else if (currentChallengeStatus === ChallengeCardStatus.COMPLETED) {
+          if (currentDifficultyTier !== ChallengeDifficulty.GRANDMASTER) {
             const response = await message.reply(
               'Your Challenge Card has already been approved. Please generate a new Challenge Card in the Challenge Bot Commands channel.',
             );

@@ -2,12 +2,18 @@ import { ButtonInteraction, Message, GuildMember } from 'discord.js';
 import * as challenges from '../../../challenges';
 import getChallengeCardMessage from '../../messages/challenge';
 import { Button } from './types';
+import {
+  Challenge,
+  ChallengeCardStatus,
+  ChallengeDifficulty,
+} from '../../../database';
 
 const challengeRerollButton: Button = {
   buttons: ['reroll'],
   onButtonInteraction: async (interaction: ButtonInteraction) => {
     const { customId } = interaction;
-    const [action, userId, difficultyTier] = customId.split(' ');
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [_action, userId, _difficultyTier] = customId.split(' ');
 
     // Check if the interaction is from a guild and if the button presser is the owner of the challenge card attempting to be rerolled
     if (
@@ -23,14 +29,14 @@ const challengeRerollButton: Button = {
 
       // Fetch user's challenge main record
       const challengeMain = await challenges.loadChallengeMain(userId);
-      let currentDifficultyTier: string;
-      let currentChallengeStatus: string;
+      let currentDifficultyTier: ChallengeDifficulty;
+      let currentChallengeStatus: ChallengeCardStatus;
       let numberOfRerolls: number;
-      let challengeList: string[] = [];
+      let challengeList: Challenge[] = [];
       if (challengeMain) {
-        currentDifficultyTier = challengeMain.currentDifficultyTier;
-        currentChallengeStatus = challengeMain.currentChallengeStatus;
-        numberOfRerolls = challengeMain.numberOfRerolls;
+        currentDifficultyTier = challengeMain.difficulty;
+        currentChallengeStatus = challengeMain.status;
+        numberOfRerolls = challengeMain.rerollsRemaining;
         if (numberOfRerolls <= 0) {
           await interaction.reply({
             content: `You do not have any rerolls remaining.`,
@@ -38,13 +44,13 @@ const challengeRerollButton: Button = {
           });
           return;
         }
-        if (currentChallengeStatus === 'Started') {
+        if (currentChallengeStatus === ChallengeCardStatus.STARTED) {
           const existingChallenges = await challenges.loadChallengeCard(
             userId,
             currentDifficultyTier,
           );
           if (existingChallenges) {
-            if (existingChallenges.rerolled === 0) {
+            if (existingChallenges.rerollsRemaining === 0) {
               // Region role requirement check based on difficulty
               const regionRoleCount = challenges.getRegionRoleCount(userRoles);
               const requiredRegionRoles =
@@ -77,7 +83,7 @@ const challengeRerollButton: Button = {
 
               // Update challengeMain's number of rerolls remaining
               await challenges.updateChallengeMain(userId, {
-                numberOfRerolls: numberOfRerolls,
+                rerollsRemaining: numberOfRerolls,
               });
 
               const challengeEmbed = getChallengeCardMessage({

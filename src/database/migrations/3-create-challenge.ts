@@ -1,19 +1,12 @@
 import { DataTypes, QueryInterface } from 'sequelize';
 
 import { Challenge } from '../models';
-import { ChallengeDifficulty } from '../models/Challenge/Challenge';
 
 module.exports = {
   async up(queryInterface: QueryInterface) {
     await queryInterface.createTable<Challenge>('Challenge', {
       difficulty: {
-        type: DataTypes.ENUM<ChallengeDifficulty>(
-          ChallengeDifficulty.NOVICE,
-          ChallengeDifficulty.INTERMEDIATE,
-          ChallengeDifficulty.EXPERIENCED,
-          ChallengeDifficulty.MASTER,
-          ChallengeDifficulty.GRANDMASTER,
-        ),
+        type: DataTypes.NUMBER,
         allowNull: false,
       },
       description: {

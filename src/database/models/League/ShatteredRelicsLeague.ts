@@ -31,6 +31,7 @@ class ShatteredRelicsLeague extends InitializableModel<ShatteredRelicsLeague> {
     );
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   static initializeAssociations() {}
 }
 

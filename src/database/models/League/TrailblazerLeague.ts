@@ -31,6 +31,7 @@ class TrailblazerLeague extends InitializableModel<TrailblazerLeague> {
     );
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   static initializeAssociations() {}
 }
 

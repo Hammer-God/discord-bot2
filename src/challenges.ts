@@ -2,8 +2,28 @@ import {
   Challenge,
   ChallengeCard,
   ChallengeDifficulty,
+  Region,
 } from '../src/database/models';
-import * as challengesData from '../src/challengeList/challenges.json';
+
+type ChallengeCache = {
+  challenges: Challenge[];
+  regions: Region[];
+  regionNameMap: Record<number, string>;
+};
+
+export const challengeCache: ChallengeCache = {
+  challenges: [],
+  regions: [],
+  regionNameMap: {},
+};
+
+export const loadChallengeCache = async () => {
+  challengeCache.challenges = await Challenge.findAll();
+  challengeCache.regions = await Region.findAll();
+  challengeCache.regions.forEach((region) => {
+    challengeCache.regionNameMap[region.id] = region.name;
+  });
+};
 
 /**
  * // Counts the number of region roles the user has for challenge eligibility
@@ -11,17 +31,7 @@ import * as challengesData from '../src/challengeList/challenges.json';
  * @returns - Number of region roles the user has.
  */
 export function getRegionRoleCount(userRoles: string[]): number {
-  const regionRoles = [
-    'Asgarnia',
-    'Kandarin',
-    'Fremennik',
-    'Desert',
-    'Morytania',
-    'Tirannwn',
-    'Wilderness',
-    'Kourend',
-    'Varlamore',
-  ];
+  const regionRoles = challengeCache.regions.map((region) => region.name);
   return userRoles.filter((role) => regionRoles.includes(role)).length;
 }
 
@@ -76,7 +86,7 @@ export async function updateChallengeMain(
  */
 export async function loadChallengeCard(
   userId: string,
-  difficulty: string,
+  difficulty: ChallengeDifficulty,
 ): Promise<ChallengeCard | null> {
   return await ChallengeCard.findOne({
     where: { discordUserId: userId, difficulty: difficulty },
@@ -95,9 +105,9 @@ export async function saveChallengeCard(
   challenges: Challenge[],
   rerolled: number,
 ): Promise<void> {
-  let challengeOne = challenges[0];
-  let challengeTwo = challenges[1];
-  let challengeThree = challenges[2];
+  const challengeOne = challenges[0];
+  const challengeTwo = challenges[1];
+  const challengeThree = challenges[2];
   let challengeFour = undefined;
   let challengeFive = undefined;
 
@@ -120,29 +130,32 @@ export async function saveChallengeCard(
     challengeThreeId: challengeThree.id,
     challengeFourId: challengeFour?.id,
     challengeFiveId: challengeFive?.id,
-    rerollCount: rerolled,
+    rerollsRemaining: rerolled,
   });
 }
 
 export function existingChallengesToList(
   existingChallenges: ChallengeCard,
   difficulty: ChallengeDifficulty,
-): number[] {
-  const challengeList: number[] = [];
-  challengeList[0] = existingChallenges.challengeOneId;
-  challengeList[1] = existingChallenges.challengeTwoId;
-  challengeList[2] = existingChallenges.challengeThreeId;
+): Challenge[] {
+  const challengeIdList: number[] = [];
+  challengeIdList[0] = existingChallenges.challengeOneId;
+  challengeIdList[1] = existingChallenges.challengeTwoId;
+  challengeIdList[2] = existingChallenges.challengeThreeId;
 
   if (
     difficulty === ChallengeDifficulty.EXPERIENCED ||
     difficulty === ChallengeDifficulty.MASTER
   ) {
-    challengeList[3] = existingChallenges.challengeFourId;
+    challengeIdList[3] = existingChallenges.challengeFourId;
   } else if (difficulty === ChallengeDifficulty.GRANDMASTER) {
-    challengeList[3] = existingChallenges.challengeFourId;
-    challengeList[4] = existingChallenges.challengeFiveId;
+    challengeIdList[3] = existingChallenges.challengeFourId;
+    challengeIdList[4] = existingChallenges.challengeFiveId;
   }
-  return challengeList;
+
+  return challengeIdList.map((id) =>
+    challengeCache.challenges.find((c) => c.id === id),
+  );
 }
 
 /**
@@ -153,11 +166,10 @@ export function existingChallengesToList(
 export function getNextDifficultyTier(
   currentTier: ChallengeDifficulty,
 ): ChallengeDifficulty {
-  const tiers = Object.values(ChallengeDifficulty);
-  const currentIndex = tiers.indexOf(currentTier);
-  return currentIndex < tiers.length - 1
-    ? tiers[currentIndex + 1]
-    : ChallengeDifficulty.GRANDMASTER;
+  const nextTier = currentTier + 1;
+  return currentTier >= ChallengeDifficulty.GRANDMASTER
+    ? ChallengeDifficulty.GRANDMASTER
+    : nextTier;
 }
 
 /**
@@ -169,7 +181,7 @@ export function getNextDifficultyTier(
 export function generateNewChallenges(
   difficulty: ChallengeDifficulty,
   userRoles: string[],
-): string[] {
+): Challenge[] {
   const allChallenges = getEligibleChallenges(difficulty, userRoles);
   return getRandomChallenges(allChallenges, getChallengeCount(difficulty));
 }
@@ -180,34 +192,27 @@ export function generateNewChallenges(
  * @param userRoles - An array of user's role names.
  * @returns An array of eligible challenge descriptions.
  */
-function getEligibleChallenges(
+const getEligibleChallenges = (
   difficulty: ChallengeDifficulty,
   userRoles: string[],
-): string[] {
-  return challengesData.challenges
-    .filter(
-      (challenge: {
-        difficulty: string;
-        region1: string;
-        region2?: string;
-      }) => {
-        if (challenge.difficulty !== difficulty) {
-          return false;
-        }
-        if (challenge.region1 === 'General') {
-          return true;
-        }
-        if (challenge.region2) {
-          return (
-            userRoles.includes(challenge.region1) &&
-            userRoles.includes(challenge.region2)
-          );
-        }
-        return userRoles.includes(challenge.region1);
-      },
-    )
-    .map((challenge: { description: string }) => challenge.description);
-}
+): Challenge[] => {
+  return challengeCache.challenges.filter((challenge) => {
+    const regionOneName = challengeCache.regionNameMap[challenge.regionOneId];
+    const regionTwoName = challengeCache.regionNameMap[challenge.regionTwoId];
+    if (challenge.difficulty !== difficulty) {
+      return false;
+    }
+    if (regionOneName === 'General') {
+      return true;
+    }
+    if (regionTwoName) {
+      return (
+        userRoles.includes(regionOneName) && userRoles.includes(regionTwoName)
+      );
+    }
+    return userRoles.includes(regionOneName);
+  });
+};
 
 /**
  * Shuffles and selects a random subset of challenges.
@@ -215,7 +220,10 @@ function getEligibleChallenges(
  * @param count - Number of challenges to select.
  * @returns An array of selected challenge descriptions.
  */
-function getRandomChallenges(challenges: string[], count: number): string[] {
+function getRandomChallenges(
+  challenges: Challenge[],
+  count: number,
+): Challenge[] {
   const shuffled = challenges.sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
 }

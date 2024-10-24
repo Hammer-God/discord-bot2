@@ -1,13 +1,13 @@
-import { CreationOptional, DataTypes, ForeignKey } from 'sequelize';
+import { CreationOptional, DataTypes, ForeignKey, Sequelize } from 'sequelize';
 import { InitializableModel } from '../types';
 import Region from '../Region';
 
 export enum ChallengeDifficulty {
-  NOVICE = 'novice',
-  INTERMEDIATE = 'intermediate',
-  EXPERIENCED = 'experienced',
-  MASTER = 'master',
-  GRANDMASTER = 'grandmaster',
+  NOVICE = 1,
+  INTERMEDIATE = 2,
+  EXPERIENCED = 3,
+  MASTER = 4,
+  GRANDMASTER = 5,
 }
 
 class Challenge extends InitializableModel<Challenge> {
@@ -20,17 +20,11 @@ class Challenge extends InitializableModel<Challenge> {
   declare readonly regionTwoId?: CreationOptional<ForeignKey<Region['id']>>;
   declare readonly updatedAt: CreationOptional<Date>;
 
-  static initialize = (sequelize: any) => {
+  static initialize = (sequelize: Sequelize) => {
     Challenge.init(
       {
         difficulty: {
-          type: DataTypes.ENUM<ChallengeDifficulty>(
-            ChallengeDifficulty.NOVICE,
-            ChallengeDifficulty.INTERMEDIATE,
-            ChallengeDifficulty.EXPERIENCED,
-            ChallengeDifficulty.MASTER,
-            ChallengeDifficulty.GRANDMASTER,
-          ),
+          type: DataTypes.NUMBER,
           allowNull: false,
         },
         description: {

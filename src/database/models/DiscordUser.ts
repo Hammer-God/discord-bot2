@@ -1,4 +1,4 @@
-import { DataTypes, Sequelize, Model, CreationOptional } from 'sequelize';
+import { DataTypes, Sequelize, CreationOptional } from 'sequelize';
 import { InitializableModel } from './types';
 
 class DiscordUser extends InitializableModel<DiscordUser> {
@@ -46,6 +46,7 @@ class DiscordUser extends InitializableModel<DiscordUser> {
     );
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   static initializeAssociations() {}
 }
 

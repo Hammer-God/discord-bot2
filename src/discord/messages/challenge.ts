@@ -1,11 +1,12 @@
 import { MessageEmbed } from 'discord.js';
 
 import { getChallengeCount } from '../../challenges';
+import { Challenge, ChallengeDifficulty } from '../../database';
 
 type GetChallengeCardMessageParams = {
-  difficulty: string;
+  difficulty: ChallengeDifficulty;
   userDisplayName: string;
-  challenges: string[];
+  challenges: Challenge[];
 };
 
 const getChallengeCardMessage = ({
@@ -22,7 +23,10 @@ const getChallengeCardMessage = ({
     .setDescription(
       challenges
         .slice(0, challengeCount)
-        .map((challenge, index) => `**Challenge ${index + 1}:**\n${challenge}`)
+        .map(
+          (challenge, index) =>
+            `**Challenge ${index + 1}:**\n${challenge.description}`,
+        )
         .join('\n\n'),
     );
 };
@@ -32,17 +36,17 @@ const getChallengeCardMessage = ({
  * @param difficulty - The difficulty tier.
  * @returns The color code.
  */
-function getEmbedColour(difficulty: string): number {
+function getEmbedColour(difficulty: ChallengeDifficulty): number {
   switch (difficulty) {
-    case 'Novice':
+    case ChallengeDifficulty.NOVICE:
       return 0x00ff00; // Green
-    case 'Intermediate':
+    case ChallengeDifficulty.INTERMEDIATE:
       return 0xffff00; // Yellow
-    case 'Experienced':
+    case ChallengeDifficulty.EXPERIENCED:
       return 0xffa500; // Orange
-    case 'Master':
+    case ChallengeDifficulty.MASTER:
       return 0xff0000; // Red
-    case 'Grandmaster':
+    case ChallengeDifficulty.GRANDMASTER:
       return 0x800080; // Purple
     default:
       return 0x00ff00; // Default to green

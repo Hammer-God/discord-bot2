@@ -31,6 +31,7 @@ class TwistedLeague extends InitializableModel<TwistedLeague> {
     );
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   static initializeAssociations() {}
 }
 

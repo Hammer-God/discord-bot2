@@ -3,6 +3,7 @@ import { GuildMember, MessageActionRow, MessageButton } from 'discord.js';
 import { Command } from './types';
 import { channelGroups } from '../../Channel';
 import {
+  Challenge,
   ChallengeCard,
   ChallengeCardStatus,
   ChallengeDifficulty,
@@ -30,13 +31,11 @@ const challengeCommand: Command = {
         ChallengeDifficulty.NOVICE;
       let currentChallengeStatus: ChallengeCardStatus =
         ChallengeCardStatus.STARTED;
-      let challengeList: string[] = [];
-      let numberOfRerolls = 0;
+      let challengeList: Challenge[] = [];
 
       if (challengeMain) {
         currentDifficultyTier = challengeMain.difficulty;
         currentChallengeStatus = challengeMain.status;
-        numberOfRerolls = challengeMain.rerollCount;
 
         // Check if user has completed Grandmaster
         if (
@@ -59,7 +58,7 @@ const challengeCommand: Command = {
             userId,
             currentDifficultyTier,
           );
-          rerolled = existingChallenges.rerollCount;
+          rerolled = existingChallenges.rerollsRemaining;
           if (existingChallenges) {
             challengeList = challenges.existingChallengesToList(
               existingChallenges,
@@ -133,7 +132,7 @@ const challengeCommand: Command = {
           discordUserId: userId,
           difficulty: ChallengeDifficulty.NOVICE,
           status: ChallengeCardStatus.STARTED,
-          rerollCount: 2,
+          rerollsRemaining: 2,
         });
 
         // Save Novice challenges
@@ -153,10 +152,10 @@ const challengeCommand: Command = {
       });
 
       // Add "Reroll" button if rerolls are available and not already rerolled
-      if (challengeMain.rerollCount > 0 && !rerolled) {
+      if (challengeMain.rerollsRemaining > 0 && !rerolled) {
         const rerollButton = new MessageButton()
           .setCustomId(`reroll ${userId} ${currentDifficultyTier}`)
-          .setLabel(`Reroll (${challengeMain.rerollCount} remaining)`)
+          .setLabel(`Reroll (${challengeMain.rerollsRemaining} remaining)`)
           .setStyle('PRIMARY');
         const row = new MessageActionRow().addComponents(rerollButton);
 
