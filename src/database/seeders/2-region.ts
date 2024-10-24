@@ -27,7 +27,7 @@ module.exports = {
           name: 'Fremennik',
         },
         {
-          name: 'Tiarannwn',
+          name: 'Tirannwn',
         },
         {
           name: 'Varlamore',

@@ -5,6 +5,6 @@ describe('Challenge', () => {
     const challenges = await Challenge.findAll({
       where: { difficulty: ChallengeDifficulty.NOVICE },
     });
-    expect(challenges.length).toBe(5);
+    expect(challenges.length).toBe(59);
   });
 });

@@ -16,7 +16,7 @@
     "start:watch": "nodemon -r ./src/index.ts",
     "start:node": "node ./dist/index.js",
     "release": "changeset tag",
-    "pretest": "rm -f ./.sqlite/test.db && cross-env NODE_ENV=test yarn migrate && cross-env NODE_ENV=test yarn seed",
+    "pretest": "rm -f ./.sqlite/test.db && cross-env NODE_ENV=test yarn migrate --debug && cross-env NODE_ENV=test yarn seed --debug",
     "test": "cross-env NODE_ENV=test DOTENV_CONFIG_PATH=.env.test yarn jest --passWithNoTests",
     "prepare": "husky install"
   },

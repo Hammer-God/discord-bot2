@@ -126,11 +126,7 @@ class ChallengeCard extends InitializableModel<ChallengeCard> {
     ChallengeCard.belongsTo(DiscordUser, {
       foreignKey: {
         allowNull: false,
-      },
-    });
-    ChallengeCard.hasMany(Challenge, {
-      foreignKey: {
-        allowNull: false,
+        name: 'discordUserId',
       },
     });
   }
